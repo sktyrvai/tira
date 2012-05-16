@@ -1,20 +1,17 @@
 Sanaindeksi
 
 Ohjelma lukee tekstitiedoston tai useita tekstitiedostoja ja rakentaa näistä trie-puun. 
-Hakutoiminnossa ohjelmalle annetaan sana, sanat tai näiden alut ja ohjelma palauttaa 
-millä riveillä ne kaikki esiintyvät ja missä tekstitiedostossa.
+Hakutoiminnossa ohjelmalle annetaan sana, sanat tai näiden alut ja ohjelma palauttaa millä riveillä ne kaikki esiintyvät ja missä tekstitiedostossa.
 
 
 
--mitä algoritmeja ja tietorakenteita tarkalleen ottaen käytetään
--miten ohjelmalle annettavia syötteitä tulkitaan
--halutut aika- ja tilavaativuudet 
+-mitä algoritmeja ja tietorakenteita tarkalleen ottaen käytetään?
+-miten ohjelmalle annettavia syötteitä tulkitaan?
+-halutut aika- ja tilavaativuudet ?
 
-
-trie -> suffix tree -> generalised suffix tree ? 
 
 Rakennus O(n), missä n kirjainten kokonaismäärä.
-m-mittaisen Stringin z esiintymistä löytyy ajassa O(m+z)
+m-mittaisen Stringin z esiintymistä löytynee ajassa O(m+z)? Aika- ja tilavaativuusanalyysi kehittyy vielä, kunhan ohjelman perusrakenne selvenee.
 
 Trie:
 http://www.cs.helsinki.fi/u/ejunttil/opetus/tiraharjoitus/trie.html
