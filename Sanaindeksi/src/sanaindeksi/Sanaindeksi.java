@@ -15,5 +15,9 @@ public class Sanaindeksi {
      */
     public static void main(String[] args) {
         System.out.println("Hello");
+        // tee solmu
+        // tee puu yhdellä sanalla
+        // lue tekstitiedosto
+        // 
     }
 }
