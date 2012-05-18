@@ -8,6 +8,7 @@ import java.util.ArrayList;
 /**
  *
  * @author Sanna
+ * 
  */
 public class Solmu {
     private char merkki;
@@ -27,6 +28,7 @@ public class Solmu {
         return this.merkki;
     }
     
+ 
     public void uusiLapsi(Solmu s){
         Lapset.add(s);
     }
@@ -36,7 +38,7 @@ public class Solmu {
     }
     
     public String toString(){
-        return " " + this.getSolmu();
+        return "" + this.getSolmu();
     }
             
    

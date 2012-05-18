@@ -8,7 +8,8 @@ import java.util.ArrayList;
 
 /**
  *
- * @author sktyrvai
+ * @author Sanna Tyrväinen
+ * @version 18052012
  */
 public class Sanaindeksi {
 
@@ -21,15 +22,15 @@ public class Sanaindeksi {
         Solmu j = new Solmu(ekaSana.charAt(0));
         Solmu s = new Solmu(ekaSana.charAt(1));
         j.uusiLapsi(s);
+        j.uusiLapsi(new Solmu('k'));
         
         System.out.println("Hello");
-        System.out.println("Testaillaan lisää");
-        
-        System.out.println(j.getSolmu());
+
+        System.out.println(j);
         ArrayList<Solmu> l = j.getLapset();
         System.out.println("lapset:");
         for(Solmu lapsi: l){
-            System.out.println(l);
+            System.out.println(lapsi);
         }
         // tee solmu
         // tee puu yhdellä sanalla
