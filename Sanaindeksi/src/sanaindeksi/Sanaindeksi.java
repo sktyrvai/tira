@@ -19,6 +19,8 @@ public class Sanaindeksi {
     public static void main(String[] args) {
         String ekaSana = "testaus";
         
+        Puu puu = new Puu();
+        
         Solmu j = new Solmu(ekaSana.charAt(0));
         Solmu s = new Solmu(ekaSana.charAt(1));
         j.uusiLapsi(s);
