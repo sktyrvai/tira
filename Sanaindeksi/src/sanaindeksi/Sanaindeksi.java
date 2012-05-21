@@ -29,6 +29,8 @@ public class Sanaindeksi {
             System.out.println("Puu sisältää sanan test");
         }
         
+        // TODO:
+        //
         // lue tekstitiedosto
         // tee testejä
         //
