@@ -33,7 +33,7 @@ public class Sanaindeksi {
         } catch (FileNotFoundException ex) {
 
         }
-        int r = 0;
+        int r = 0;        
         while(lukija.hasNextLine()){
             r++;
             String rivi = lukija.nextLine();
@@ -45,7 +45,7 @@ public class Sanaindeksi {
         }
         
         System.out.println(testipuu);
-        
+   
         /*String ekaSana = "testaus";     
         Puu puu = new Puu();
         puu.lisays(ekaSana);
@@ -61,11 +61,13 @@ public class Sanaindeksi {
         
         // TODO:
         //
-        //
+        // sanahakuun rivitiedon tulostus!
         // tee testejä
-        //
         // lisää sanojen loppuun tieto rivistä
         // laita teksti String-taulukkoon
+        // lue useampi tiedosto
+        // anna tiedostot kutsu vaiheessa
+        // tiedoston luvut omaksi luokakseen
         
     }
     

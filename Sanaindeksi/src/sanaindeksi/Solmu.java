@@ -8,10 +8,16 @@ import java.util.ArrayList;
  * @version 18052012
  */
 public class Solmu {
+    /**
+     *  merkki character solmussa 
+     */
     private char merkki;
     private ArrayList<Solmu> Lapset;
     private boolean sananLoppu = false;
-    private ArrayList<Integer> Rivit;
+    /*
+     * Rivit sisältää tiedot riveistä, joissa sana sijaitsee
+     */
+    ArrayList<Integer> Rivit;
     // ArrayList ei liene tehokkain ratkaisu tähän, mut riittänee alkuun
     
     public Solmu(char merkki){

@@ -1,5 +1,0 @@
-ensimmäinen testirivi
-toinen testi rivi
-kolmas testi rivi testirivi
-neljäs rivi testaa
-viides rivi testaa testiriviä

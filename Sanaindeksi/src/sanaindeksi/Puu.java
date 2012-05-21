@@ -69,7 +69,9 @@ public class Puu {
             if(seur == null){
                 return false;
             } else nyt = seur;
-        }     
+        } 
+        System.out.println(nyt.Rivit);
+        
         return true;
     }
     
