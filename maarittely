@@ -1,23 +1,20 @@
 ﻿Sanaindeksi
 
-Ohjelma lukee tekstitiedoston tai useita tekstitiedostoja ja rakentaa näistä trie-puun. 
-Hakutoiminnossa ohjelmalle annetaan sana, sanat tai näiden alut ja ohjelma palauttaa millä riveillä ne kaikki esiintyvät ja missä tekstitiedostossa.
+Ohjelma lukee tekstitiedoston tai useita tekstitiedostoja ja rakentaa näistä trie-puun. Hakutoiminnossa ohjelmalle annetaan sana, sanat tai näiden alut ja ohjelma palauttaa millä riveillä ne kaikki esiintyvät ja missä tekstitiedostossa.
 
 
--mitä algoritmeja ja tietorakenteita tarkalleen ottaen käytetään?
--miten ohjelmalle annettavia syötteitä tulkitaan?
-
-
-Rakenne on trie-puu, jossa jokaisen sanan vimeinen solmu tietää miltä riveiltä ja mistä tekstitiedostoista se on kotoisin. Teksti String-taulukkona!
+Rakenne on trie-puu, jossa jokaisen sanan vimeinen solmu tietää miltä riveiltä ja mistä tekstitiedostoista se on kotoisin. Trie-puun rakennusvaiheessa teksi siirretään String taulukkoon, jossa jokaisessa taulukon indeksissä on yksi teksin rivi Stringinä. Tämän tilavaativuus on O(rivien lkm)
 
 
 Eritietolähteistä poimittuja:
 
 Rakennus O(n), missä n kirjainten kokonaismäärä.
 m-mittaisen Stringin z esiintymistä löytynee ajassa O(m+z)? 
-Joskus harjoitustyössä aikatavoitteena löytää solmun haluttu lapsi ajassa O(log n), missä n solmun lasten lukumäärä.
+Joskus harjoitustyössä aikatavoitteena löytää solmun haluttu lapsi ajassa O(log n), missä n solmun lasten lukumäärä. Tämä vaatii lapsisolmujen esitystä Dynaamisena järjestettynä taulukkona.
 
 Aika- ja tilavaativuusanalyysi kehittyy vielä, kunhan ohjelman perusrakenne selvenee.
+
+
 
 
 Trie:

@@ -15,6 +15,19 @@ public class Puu {
         juuri = new Solmu(' ');        
     }
     
+    public void lisays(String sana){
+        Solmu nyt = this.juuri;
+        
+        for(int i = 0; i< sana.length(); i++ ){
+            Solmu seur = nyt.lapsisolmu(sana.charAt(i));
+            if(seur == null){
+                Solmu x = new Solmu(sana.charAt(i));
+                nyt.uusiLapsi(x);
+                nyt = x;
+            }
+        }
+    }
+    
     /*Esa Junttilan Trie-puun tulostus
      * http://www.cs.helsinki.fi/u/ejunttil/opetus/tiraharjoitus/treeprint.txt
      */

@@ -20,8 +20,12 @@ public class Sanaindeksi {
         String ekaSana = "testaus";
         
         Puu puu = new Puu();
+        puu.lisays(ekaSana);
+        System.out.println(puu);
+        puu.lisays("voipas");
+        System.out.println(puu);
         
-        Solmu j = new Solmu(ekaSana.charAt(0));
+        /*Solmu j = new Solmu(ekaSana.charAt(0));
         Solmu s = new Solmu(ekaSana.charAt(1));
         j.uusiLapsi(s);
         j.uusiLapsi(new Solmu('k'));
@@ -34,6 +38,8 @@ public class Sanaindeksi {
         for(Solmu lapsi: l){
             System.out.println(lapsi);
         }
+        * 
+        */
         // tee solmu
         // tee puu yhdellä sanalla
         // lue tekstitiedosto
