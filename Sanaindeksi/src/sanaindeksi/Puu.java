@@ -15,7 +15,7 @@ public class Puu {
     
     /**
      * Lisätään sana puuhun ja sanan viimeiseen kirjaimeen sanan päättyminen
-     * @param tekstistä luettu sana
+     * @param sana tekstistä luettu sana
      */
     public void lisays(String sana){
         Solmu nyt = this.juuri;
@@ -28,7 +28,30 @@ public class Puu {
                 nyt = x;
             } else nyt = seur;
             if(i== sana.length()-1){
-                    nyt.sananLoppu = true;
+                    nyt.setSananLoppu(true);
+                }          
+        }
+    }
+    
+    /**
+     * Lisätään puuhun sana ja sanan viimeiseen merkkiin sanan päättyminen ja esiintymisrivi 
+     * @param sana tekstistä luettu sana
+     * @param rivi tekstin rivi, jossa sana esiintyi
+     * 
+     */
+    public void lisays(String sana, int rivi){
+        Solmu nyt = this.juuri;
+        
+        for(int i = 0; i< sana.length(); i++ ){
+            Solmu seur = nyt.lapsisolmu(sana.charAt(i));
+            if(seur == null){
+                Solmu x = new Solmu(sana.charAt(i));
+                nyt.uusiLapsi(x);
+                nyt = x;
+            } else nyt = seur;
+            if(i== sana.length()-1){
+                    nyt.setSananLoppu(true);
+                    nyt.addRivi(rivi);
                 }          
         }
     }

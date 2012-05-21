@@ -10,12 +10,14 @@ import java.util.ArrayList;
 public class Solmu {
     private char merkki;
     private ArrayList<Solmu> Lapset;
-    boolean sananLoppu = false;
+    private boolean sananLoppu = false;
+    private ArrayList<Integer> Rivit;
     // ArrayList ei liene tehokkain ratkaisu tähän, mut riittänee alkuun
     
     public Solmu(char merkki){
         this.merkki = merkki;
-        Lapset = new ArrayList<Solmu>();       
+        Lapset = new ArrayList<Solmu>();  
+        Rivit = new ArrayList<Integer>();
     }
     
     public void setMerkki(char merkki){
@@ -26,9 +28,17 @@ public class Solmu {
         return this.merkki;
     }
     
+    public void setSananLoppu(boolean arvo){
+        this.sananLoppu = arvo;
+    }
+    
  
     public void uusiLapsi(Solmu s){
         Lapset.add(s);
+    }
+    
+    public void addRivi(int i){
+        Rivit.add((Integer) i);
     }
 
     /** 
@@ -53,7 +63,13 @@ public class Solmu {
     }
     
     public String toString(){
-        return ""+ this.getMerkki();
+        String apu = "";
+        if(Rivit != null){
+            for(Integer rivi: Rivit){
+                apu = apu + " " +rivi;
+            }
+        }
+        return this.getMerkki()+" "+ apu;
     }
             
    
