@@ -1,19 +1,16 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package sanaindeksi;
 import java.util.ArrayList;
 
 /**
  *
- * @author Sanna
- * 
+ * @author Sanna Tyrväinen
+ * @version 18052012
  */
 public class Solmu {
     private char merkki;
     private ArrayList<Solmu> Lapset;
-    boolean sananLoppu;
+    boolean sananLoppu = false;
     // ArrayList ei liene tehokkain ratkaisu tähän, mut riittänee alkuun
     
     public Solmu(char merkki){
@@ -34,9 +31,12 @@ public class Solmu {
         Lapset.add(s);
     }
 
-    /* Lapsisolmu tutkii löytyykö annettu char solmun lapsista
-    * 
-    */
+    /** 
+     * Lapsisolmu tutkii löytyykö annettu char solmun lapsista
+     * @param c tutkitaaan löytyykö lapsisolmu, jossa character c
+     * @return Solmu, jossa character on tai null, jos sellaista ei löydy
+     * 
+     */
     public Solmu lapsisolmu(char c){
         if(! Lapset.isEmpty()){       
             for(Solmu lapsi: Lapset){

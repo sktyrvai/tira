@@ -22,28 +22,18 @@ public class Sanaindeksi {
         Puu puu = new Puu();
         puu.lisays(ekaSana);
         System.out.println(puu);
-        puu.lisays("voipas");
+        puu.lisays("testi");
+        puu.lisays("tempaus");
         System.out.println(puu);
-        
-        /*Solmu j = new Solmu(ekaSana.charAt(0));
-        Solmu s = new Solmu(ekaSana.charAt(1));
-        j.uusiLapsi(s);
-        j.uusiLapsi(new Solmu('k'));
-        
-        System.out.println("Hello");
-
-        System.out.println(j);
-        ArrayList<Solmu> l = j.getLapset();
-        System.out.println("lapset:");
-        for(Solmu lapsi: l){
-            System.out.println(lapsi);
+        if(puu.etsi("pop")){
+            System.out.println("Puu sisältää sanan test");
         }
-        * 
-        */
-        // tee solmu
-        // tee puu yhdellä sanalla
+        
         // lue tekstitiedosto
-        // 
+        // tee testejä
+        //
+        // lisää sanojen loppuun tieto rivistä
+        // laita teksti String-taulukkoon
         
     }
     
