@@ -5,12 +5,11 @@ import java.util.ArrayList;
 /**
  *
  * @author Sanna Tyrväinen
- * @version 18052012
+ * @version
  */
+  
 public class Solmu {
-    /**
-     *  merkki character solmussa 
-     */
+
     private char merkki;
     private ArrayList<Solmu> Lapset;
     private boolean sananLoppu = false;

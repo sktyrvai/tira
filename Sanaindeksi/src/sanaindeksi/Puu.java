@@ -4,7 +4,7 @@ package sanaindeksi;
 /**
  *
  * @author Sanna Tyrväinen
- * @version 18052012
+ * @version
  */
 public class Puu {
     private Solmu juuri;
@@ -73,6 +73,10 @@ public class Puu {
         System.out.println(nyt.Rivit);
         
         return true;
+    }
+    
+    public Solmu getJuuri(){
+        return this.juuri;
     }
     
     /*Esa Junttilan Trie-puun tulostus
