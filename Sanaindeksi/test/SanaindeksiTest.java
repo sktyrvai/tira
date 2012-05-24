@@ -30,6 +30,10 @@ public class SanaindeksiTest {
     @After
     public void tearDown() {
     }
+    
+    @Test
+    public void testi(){
+    }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //

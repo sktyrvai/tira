@@ -5,6 +5,7 @@
 
 import org.junit.*;
 import static org.junit.Assert.*;
+import sanaindeksi.Solmu;
 
 /**
  *
@@ -29,6 +30,12 @@ public class SolmuTest {
     
     @After
     public void tearDown() {
+    }
+    
+    @Test
+    public void testi(){
+        Solmu merimies = new Solmu((char) ('a' + Math.round(26*Math.random())));
+        merimies.uusiLapsi(new Solmu('u'));
     }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
