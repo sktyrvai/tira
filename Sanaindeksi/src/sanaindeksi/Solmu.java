@@ -13,10 +13,11 @@ public class Solmu {
     private char merkki;
     private ArrayList<Solmu> Lapset;
     private boolean sananLoppu = false;
-    /*
+    /**
      * Rivit sisältää tiedot riveistä, joissa sana sijaitsee
      */
     ArrayList<Integer> Rivit;
+    
     // ArrayList ei liene tehokkain ratkaisu lapsiin, mutta riittänee alkuun
     
     public Solmu(char merkki){
@@ -39,7 +40,9 @@ public class Solmu {
     
  
     public void uusiLapsi(Solmu s){
-        Lapset.add(s);
+        if(this.lapsisolmu(s.getMerkki())== null){
+            Lapset.add(s);
+        }
     }
     
     public void addRivi(int i){
@@ -65,6 +68,10 @@ public class Solmu {
     
     public ArrayList<Solmu> getLapset(){
         return Lapset;
+    }
+    
+    public ArrayList<Integer> getRivit(){
+        return this.Rivit;
     }
     
     public boolean getSananLoppu(){

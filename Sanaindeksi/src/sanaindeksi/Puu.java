@@ -57,7 +57,8 @@ public class Puu {
     }
     
     /**
-     * etsitään sana puusta 
+     * etsitään sana puusta ja tulotetaan esiintymisrivit
+     * palautetaan mielummin kaikki esiintymisrivit kerralla 
      * @param sana käyttäjän hakema sana
      * @return boolean löytyikö sana tai sanalla alkava sana tekstisä
      */
@@ -70,23 +71,23 @@ public class Puu {
                 return false;
             } else nyt = seur;
         } 
-        System.out.println(nyt.Rivit);
+        System.out.print(nyt.Rivit);
         etsiRivit(nyt);
         
         /*for(Solmu s :nyt.getLapset()){
             if (s.getSananLoppu()){
                 System.out.println(s.Rivit);
             }
-        } 
-        * 
+        }  
         */
+        System.out.println();
         return true;
     }
     
     private void etsiRivit(Solmu nyt){
         for(Solmu s: nyt.getLapset()){
             if(s.getSananLoppu()){
-                System.out.println(s.Rivit);
+                System.out.print(s.Rivit);
             }
             etsiRivit(s);
         }

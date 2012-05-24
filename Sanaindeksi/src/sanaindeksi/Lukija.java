@@ -40,7 +40,7 @@ public class Lukija {
             for(int i = 0; i< sanat.length; i++){
                 puu.lisays(sanat[i], r);
             }
-            //System.out.println(rivi);          
+            System.out.println(rivi);          
         }        
     }
     

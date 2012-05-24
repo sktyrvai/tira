@@ -28,10 +28,10 @@ public class Sanaindeksi {
         File tied = new File("testi.txt");
         lukija.lisaaTiedosto(new File("testi.txt"));
   
-        System.out.println(testipuu);
+        //System.out.println(testipuu);
         
          testipuu.etsi("rivi");
-        
+         
         // TODO:
         //
         // sanahakuun rivitiedon tulostus!
