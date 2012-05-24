@@ -71,8 +71,26 @@ public class Puu {
             } else nyt = seur;
         } 
         System.out.println(nyt.Rivit);
+        etsiRivit(nyt);
         
+        /*for(Solmu s :nyt.getLapset()){
+            if (s.getSananLoppu()){
+                System.out.println(s.Rivit);
+            }
+        } 
+        * 
+        */
         return true;
+    }
+    
+    private void etsiRivit(Solmu nyt){
+        for(Solmu s: nyt.getLapset()){
+            if(s.getSananLoppu()){
+                System.out.println(s.Rivit);
+            }
+            etsiRivit(s);
+        }
+        
     }
     
     public Solmu getJuuri(){

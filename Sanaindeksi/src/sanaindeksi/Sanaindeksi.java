@@ -25,9 +25,10 @@ public class Sanaindeksi {
         
         Puu testipuu = new Puu();
         Lukija lukija = new Lukija(testipuu);
+        File tied = new File("testi.txt");
         lukija.lisaaTiedosto(new File("testi.txt"));
   
-        //System.out.println(testipuu);
+        System.out.println(testipuu);
         
          testipuu.etsi("rivi");
         

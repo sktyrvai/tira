@@ -17,7 +17,7 @@ public class Solmu {
      * Rivit sisältää tiedot riveistä, joissa sana sijaitsee
      */
     ArrayList<Integer> Rivit;
-    // ArrayList ei liene tehokkain ratkaisu tähän, mut riittänee alkuun
+    // ArrayList ei liene tehokkain ratkaisu lapsiin, mutta riittänee alkuun
     
     public Solmu(char merkki){
         this.merkki = merkki;
@@ -66,6 +66,11 @@ public class Solmu {
     public ArrayList<Solmu> getLapset(){
         return Lapset;
     }
+    
+    public boolean getSananLoppu(){
+        return this.sananLoppu;   
+    }
+           
     
     public String toString(){
         String apu = "";
