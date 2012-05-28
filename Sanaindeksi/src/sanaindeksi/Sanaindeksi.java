@@ -45,7 +45,13 @@ public class Sanaindeksi {
         //System.out.println("Löydetyt rivit ja rivi-alkuiset");
         //testipuu.etsi("rivi");
         
- 
+        Taulukko t = new Taulukko();
+        t.lisaa("poi");
+        t.lisaa("pui");
+        t.lisaa("piu");
+        t.lisaa("mui");
+        t.lisaa("poks");
+        System.out.println(t.getRivi(4));
         
   
         // TODO:

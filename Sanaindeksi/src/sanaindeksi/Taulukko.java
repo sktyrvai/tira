@@ -1,30 +1,39 @@
 
 package sanaindeksi;
 
+import java.lang.reflect.Array;
+
 /**
  *
  * @author sktyrvai
  */
-public class Taulukko<E> {
+public class Taulukko {
     private int lkm;
-    private E[] sanat;
+    private Object[] sanat;
+
     
     //object?
     //yleistä kaikkiin luokkiin?
     
     public Taulukko(){
-        sanat = new E[5];
+        //sanat = new E[5];
+        //this.c = c;
+        sanat = new Object[5];
     }
+
     
-    public Taulukko(int koko){
+    
+    /*public Taulukko(int koko){
         sanat = new E[koko];
     }
+    * 
+    */
     
     /**
      * Lisää uuden alkoin taulukkoon. Jos taulukko on täysi ennen lisäystä, kaksinkertaista taulukon koko.
      * @param uusi taulukkoon lisättävä alkio
      */
-    public void lisaa(String uusi){
+    public void lisaa(Object uusi){
         if(lkm == sanat.length-1){
             kopioi();
         }
@@ -36,7 +45,7 @@ public class Taulukko<E> {
      * kopioi taulukon kaksikertaa isompaan taulukkoon
      */
     private void kopioi(){
-        String[] uusi = new String[2*sanat.length];
+       Object[] uusi = new Object[2*sanat.length];
         for(int i = 0; i< sanat.length; i++){
             uusi[i] = sanat[i];
         }
@@ -48,7 +57,7 @@ public class Taulukko<E> {
      * @return String sanat[i]. i. rivi 
      */
     
-    public String getRivi(int i){
+    public Object getRivi(int i){
         return this.sanat[i];
     }
 }
