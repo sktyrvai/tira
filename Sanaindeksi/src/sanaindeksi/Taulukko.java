@@ -5,19 +5,19 @@ package sanaindeksi;
  *
  * @author sktyrvai
  */
-public class Taulukko {
+public class Taulukko<E> {
     private int lkm;
-    private String[] sanat;
+    private E[] sanat;
     
     //object?
     //yleistä kaikkiin luokkiin?
     
     public Taulukko(){
-        sanat = new String[5];
+        sanat = new E[5];
     }
     
     public Taulukko(int koko){
-        sanat = new String[koko];
+        sanat = new E[koko];
     }
     
     /**
