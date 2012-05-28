@@ -9,55 +9,67 @@ import java.lang.reflect.Array;
  */
 public class Taulukko {
     private int lkm;
-    private Object[] sanat;
+    private Object[] taul;
 
+   
     
-    //object?
-    //yleistä kaikkiin luokkiin?
-    
-    public Taulukko(){
-        //sanat = new E[5];
-        //this.c = c;
-        sanat = new Object[5];
+    public Taulukko(){     
+        taul = new Object[5];
     }
-
     
-    
-    /*public Taulukko(int koko){
-        sanat = new E[koko];
+    public Taulukko(int k){
+        taul = new Object[k];
     }
-    * 
-    */
+ 
     
     /**
      * Lisää uuden alkoin taulukkoon. Jos taulukko on täysi ennen lisäystä, kaksinkertaista taulukon koko.
      * @param uusi taulukkoon lisättävä alkio
      */
+    
     public void lisaa(Object uusi){
-        if(lkm == sanat.length-1){
+        if(lkm == taul.length-1){
             kopioi();
         }
         lkm++;
-        sanat[lkm] = uusi;                
+        taul[lkm] = uusi;                
     }
     
     /*
      * kopioi taulukon kaksikertaa isompaan taulukkoon
      */
     private void kopioi(){
-       Object[] uusi = new Object[2*sanat.length];
-        for(int i = 0; i< sanat.length; i++){
-            uusi[i] = sanat[i];
+       Object[] uusi = new Object[2*taul.length];
+        for(int i = 0; i< taul.length; i++){
+            uusi[i] = taul[i];
         }
-        sanat = uusi;
+        taul = uusi;
+    }
+    
+    public boolean isEmpty(){
+        if(lkm == 0){
+            return true;
+        }
+        return false;
     }
     /**
-     * Palauttaa pyydetyn rivin. HUOM! Taulukon ensimmäinen paikka on tyhjä. 
+     * Palauttaa pyydetyn alkion. HUOM! Taulukon ensimmäinen paikka on tyhjä. 
      * @param int i
-     * @return String sanat[i]. i. rivi 
+     * @return String sanat[i]. i. alkio 
      */
     
-    public Object getRivi(int i){
-        return this.sanat[i];
+    public Object get(int i){
+        return this.taul[i];
     }
+    
+    public int getKoko(){
+        return this.lkm;
+    }
+    
+    public Object[] getTaulukko(){
+        return this.taul;
+        //lyhennetäänkö?
+    }
+    
+    
 }

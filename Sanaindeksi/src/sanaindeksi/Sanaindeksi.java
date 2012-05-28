@@ -51,7 +51,7 @@ public class Sanaindeksi {
         t.lisaa("piu");
         t.lisaa("mui");
         t.lisaa("poks");
-        System.out.println(t.getRivi(4));
+        System.out.println(t.get(4));
         
   
         // TODO:

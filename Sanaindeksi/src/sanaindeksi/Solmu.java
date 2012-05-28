@@ -59,7 +59,11 @@ public class Solmu {
      * 
      */
     public Solmu lapsisolmu(char c){
-        if(! Lapset.isEmpty()){       
+        if(! Lapset.isEmpty()){ 
+            // for(int i=1; i<= Lapset.getKoko();i++)
+            // Solmu s = (Solmu) lapset.get[i];
+            //if(s.getMerkki)() == c)
+            //return lapsi.get[i];
             for(Solmu lapsi: Lapset){
                 if(lapsi.getMerkki() == c){
                     return lapsi;
@@ -68,6 +72,17 @@ public class Solmu {
         }
         return null;
     }
+    
+    /*public Solmu[] getLapset(){
+     * Solmu[] s = new Solmu[Lapset.getKoko];
+     * for(int i = 1; i++; i< s.size()){
+     *  s = Lapset.get[i]
+     * } 
+     * return s;
+        return Lapset.getTaulukko();
+    }
+    * 
+    */
     
     public ArrayList<Solmu> getLapset(){
         return Lapset;
