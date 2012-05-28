@@ -38,7 +38,10 @@ public class Solmu {
         this.sananLoppu = arvo;
     }
     
- 
+  /**
+   * Lisää Solmulle uuden lapsen, jos vastaavaa ei vielä ole.
+   * @param s Lisättävä solmu. 
+   */
     public void uusiLapsi(Solmu s){
         if(this.lapsisolmu(s.getMerkki())== null){
             Lapset.add(s);

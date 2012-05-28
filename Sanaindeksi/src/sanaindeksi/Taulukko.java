@@ -9,6 +9,8 @@ public class Taulukko {
     private int lkm;
     private String[] sanat;
     
+    //object?
+    //yleistä kaikkiin luokkiin?
     
     public Taulukko(){
         sanat = new String[5];

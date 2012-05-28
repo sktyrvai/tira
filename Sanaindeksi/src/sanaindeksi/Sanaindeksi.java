@@ -19,11 +19,11 @@ import java.util.logging.Logger;
 public class Sanaindeksi {
 
     /**
-     * @param args the command line arguments
+     * @param args käytettävät tekstitiedostot .txt
      */
+    
     public static void main(String[] args) {
-        
-              
+                    
         Puu testipuu = new Puu();
         Lukija lukija = new Lukija(testipuu);
         
@@ -53,8 +53,8 @@ public class Sanaindeksi {
         // sanahakuun rivitiedon tulostus!
         // tee testejä
         // lisää sanojen loppuun tieto rivistä
-        // laita teksti String-taulukkoon
-        // lue useampi tiedosto
+        // Hashmap tekstitiedostoille
+        // miten solmu tietää rivinsä? String, jossa tiedosto ja perässä rivit?
         
     }
     
