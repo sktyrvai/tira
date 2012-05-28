@@ -41,10 +41,13 @@ public class Sanaindeksi {
         lukija.lisaaTiedosto(new File("testi.txt"));
         lukija.lisaaTiedosto(new File("testi2.txt"));
   
-        System.out.println(testipuu);
-        System.out.println("Löydetyt rivit ja rivi-alkuiset");
-        testipuu.etsi("rivi");
-         
+        //System.out.println(testipuu);
+        //System.out.println("Löydetyt rivit ja rivi-alkuiset");
+        //testipuu.etsi("rivi");
+        
+ 
+        
+  
         // TODO:
         //
         // sanahakuun rivitiedon tulostus!

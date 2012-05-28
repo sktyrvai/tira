@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 /**
  *
  * @author Sanna
+ * @version 280512
  */
 public class Lukija {
     private Puu puu;
@@ -29,9 +30,9 @@ public class Lukija {
         try {
             lukija = new Scanner(tiedosto);
         } catch (FileNotFoundException ex) {
-            System.out.println(tiedosto + "ei löytynyt");
+            System.out.println(tiedosto + " ei löytynyt");
         }
-       
+        
         int r = 0;        
         while(lukija.hasNextLine()){
             r++;
