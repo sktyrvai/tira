@@ -72,7 +72,7 @@ public class Puu {
             } else nyt = seur;
         } 
         System.out.print(nyt.Rivit);
-        etsiRivit(nyt);
+        haeRivit(nyt);
         
         /*for(Solmu s :nyt.getLapset()){
             if (s.getSananLoppu()){
@@ -84,14 +84,13 @@ public class Puu {
         return true;
     }
     
-    private void etsiRivit(Solmu nyt){
+    private void haeRivit(Solmu nyt){
         for(Solmu s: nyt.getLapset()){
             if(s.getSananLoppu()){
                 System.out.print(s.Rivit);
             }
-            etsiRivit(s);
-        }
-        
+            haeRivit(s);
+        }    
     }
     
     public Solmu getJuuri(){
@@ -115,13 +114,10 @@ public class Puu {
 			str += toStringHelp(lapsi, indentation + "     |");
 		}
 		str += "\n" + indentation;
-
 		return str;
 	}
     }
     
-    
-    
-    
+      
     
 }
