@@ -58,8 +58,9 @@ public class Sanaindeksi {
         //
         // sanahakuun rivitiedon tulostus!
         // tee testejä
-        // lisää sanojen loppuun tieto rivistä
+        // lisää sanojen loppuun tieto rivistä (eikö tämä ole jo?)
         // Hashmap tekstitiedostoille
+        // tuunaa solmulle taulukon käyttö ja tuunaa taulukko käytettävämmäksi
         // miten solmu tietää rivinsä? String, jossa tiedosto ja perässä rivit?
         
     }
