@@ -23,14 +23,26 @@ public class Sanaindeksi {
      */
     public static void main(String[] args) {
         
+              
         Puu testipuu = new Puu();
         Lukija lukija = new Lukija(testipuu);
+        
+        if(args.length == 0){
+           System.out.println("Anna tekstitiedostot:");
+           //tähän joko for-looppi ja jokainen tiedosto erikseen tai sitten kaikki kerralla, kuten yllä
+        }
+        else{
+            for(int i= 0; i< args.length; i++){
+                lukija.lisaaTiedosto(new File(args[i]));
+            }
+        }
+        
         File tied = new File("testi.txt");
         lukija.lisaaTiedosto(new File("testi.txt"));
   
         //System.out.println(testipuu);
-        
-         testipuu.etsi("rivi");
+        System.out.println("Löydetyt rivit ja rivi-alkuiset");
+        testipuu.etsi("rivi");
          
         // TODO:
         //
@@ -39,7 +51,6 @@ public class Sanaindeksi {
         // lisää sanojen loppuun tieto rivistä
         // laita teksti String-taulukkoon
         // lue useampi tiedosto
-        // anna tiedostot kutsu vaiheessa
         
     }
     
