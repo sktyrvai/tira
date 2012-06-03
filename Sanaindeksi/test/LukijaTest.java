@@ -30,7 +30,9 @@ public class LukijaTest {
     @After
     public void tearDown() {
     }
-    // TODO add test methods here.
+    // testaa tyhjän tiedoston lukua
+    // testaa välimerkkeihin suhtautuminen!
+    // lue tiedosto ja etsi kaikki tiedoston sanat puusta
     // The methods must be annotated with annotation @Test. For example:
     //
     // @Test

@@ -18,7 +18,7 @@ public class Taulukko {
     }
     
     public Taulukko(int k){
-        taul = new Object[k];
+        taul = new Object[k+1];
     }
  
     
