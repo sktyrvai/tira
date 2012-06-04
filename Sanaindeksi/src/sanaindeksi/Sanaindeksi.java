@@ -53,7 +53,10 @@ public class Sanaindeksi {
         t.lisaa("poks");
         System.out.println(t.get(4));
         
-  
+        Solmu merimies = new Solmu('b');
+        merimies.uusiLapsi(new Solmu('s'));
+        Solmu[] taulk = merimies.getLapset();
+        System.out.println(taulk[0]+" nämä olivat mermiehen lapset");
         // TODO:
         //
         // sanahakuun rivitiedon tulostus!

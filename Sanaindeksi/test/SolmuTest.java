@@ -37,7 +37,7 @@ public class SolmuTest {
     @Test
     public void alussaTyhja(){
         merimies = new Solmu((char) ('a' + Math.round(25*Math.random())));
-        assertTrue(merimies.getLapset().isEmpty() && merimies.getRivit().isEmpty());
+        assertTrue(merimies.getLapset().length == 0 && merimies.getRivit().isEmpty());
     }
     
     @Test
@@ -71,7 +71,7 @@ public class SolmuTest {
         for (int i=0; i<10 ; i++ ){
             merimies.uusiLapsi(new Solmu(d[ (int) Math.round(Math.random()*2)]));
         }
-        assertTrue(merimies.getLapset().size() <= 3);
+        assertTrue(merimies.getLapset().length <= 3);
     }
     
     @Test
@@ -82,9 +82,16 @@ public class SolmuTest {
         for (int i=0; i<10 ; i++ ){
             merimies.uusiLapsi(new Solmu(d[i]));
         }
-        assertTrue(merimies.getLapset().size() == 7);
+        assertTrue(merimies.getLapset().length  == 7);
     }
     
+    @Test
+    public void kokeilu(){
+        merimies = new Solmu('b');
+        merimies.uusiLapsi(new Solmu('s'));
+        Solmu[] t = merimies.getLapset();
+        assertTrue(t.length == 1);
+    }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //

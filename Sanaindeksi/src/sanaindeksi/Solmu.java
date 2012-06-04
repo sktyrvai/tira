@@ -11,18 +11,17 @@ import java.util.ArrayList;
 public class Solmu {
 
     private char merkki;
-    private ArrayList<Solmu> Lapset;
+    private Taulukko Lapset;
     private boolean sananLoppu = false;
     /**
      * Rivit sisältää tiedot riveistä, joissa sana sijaitsee
      */
     ArrayList<Integer> Rivit;
     
-    // ArrayList ei liene tehokkain ratkaisu lapsiin, mutta riittänee alkuun
     
     public Solmu(char merkki){
         this.merkki = merkki;
-        Lapset = new ArrayList<Solmu>();  
+        Lapset = new Taulukko();  
         Rivit = new ArrayList<Integer>();
     }
     
@@ -44,7 +43,7 @@ public class Solmu {
    */
     public void uusiLapsi(Solmu s){
         if(this.lapsisolmu(s.getMerkki())== null){
-            Lapset.add(s);
+            Lapset.lisaa(s);
         }
     }
     
@@ -60,13 +59,10 @@ public class Solmu {
      */
     public Solmu lapsisolmu(char c){
         if(! Lapset.isEmpty()){ 
-            // for(int i=1; i<= Lapset.getKoko();i++)
-            // Solmu s = (Solmu) lapset.get[i];
-            //if(s.getMerkki)() == c)
-            //return lapsi.get[i];
-            for(Solmu lapsi: Lapset){
-                if(lapsi.getMerkki() == c){
-                    return lapsi;
+            for(int i=1; i<= Lapset.getKoko();i++){
+                Solmu s = (Solmu) Lapset.get(i);
+                if(s.getMerkki() == c){
+                    return s;
                 }
             }
         }
@@ -84,8 +80,16 @@ public class Solmu {
     * 
     */
     
-    public ArrayList<Solmu> getLapset(){
-        return Lapset;
+    /**
+     * Palauttaa taulukon, jossa vain solmun lapset 
+     * @return taulukon s. s.size == Lapset.getKoko  
+     */
+    public Solmu[] getLapset(){
+        Solmu[] s = new Solmu[Lapset.getKoko()];
+        for( int i = 0; i< s.length; i++){
+            s[i] = (Solmu) Lapset.get(i+1);
+        }
+        return s;
     }
     
     public ArrayList<Integer> getRivit(){

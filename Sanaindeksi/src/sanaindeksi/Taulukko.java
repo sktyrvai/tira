@@ -7,6 +7,7 @@ import java.lang.reflect.Array;
  *
  * @author sktyrvai
  */
+
 public class Taulukko {
     private int lkm;
     private Object[] taul;
@@ -45,6 +46,11 @@ public class Taulukko {
         taul = uusi;
     }
     
+    /**
+     * Tarkistaa onko taulukko tyhjä.
+     * @return true, jos taulukko on tyhjä
+     */
+    
     public boolean isEmpty(){
         if(lkm == 0){
             return true;
@@ -54,12 +60,13 @@ public class Taulukko {
     /**
      * Palauttaa pyydetyn alkion. HUOM! Taulukon ensimmäinen paikka on tyhjä. 
      * @param int i
-     * @return String sanat[i]. i. alkio 
+     * @return Object sanat[i]. i. alkio 
      */
     
     public Object get(int i){
         return this.taul[i];
     }
+    
     
     public int getKoko(){
         return this.lkm;
