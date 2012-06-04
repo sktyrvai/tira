@@ -20,8 +20,7 @@ public class Taulukko {
     public Taulukko(int k){
         taul = new Object[k+1];
     }
- 
-    
+     
     /**
      * Lisää uuden alkoin taulukkoon. Jos taulukko on täysi ennen lisäystä, kaksinkertaista taulukon koko.
      * @param uusi taulukkoon lisättävä alkio

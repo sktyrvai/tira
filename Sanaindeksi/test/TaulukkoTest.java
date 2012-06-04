@@ -54,13 +54,8 @@ public class TaulukkoTest {
     }
     
    
-    public boolean perus(Taulukko taulukko){
+    private boolean perus(Taulukko taulukko){
         return (taulukko.getKoko() <= taulukko.getTaulukko().length);
     }
-    
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
 }
+ 
