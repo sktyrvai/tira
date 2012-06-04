@@ -15,7 +15,7 @@ import java.util.logging.Logger;
  */
 public class Lukija {
     private Puu puu;
-    
+    public Taulukko Rivit;
     public Lukija(Puu puu){
         this.puu = puu;
     }
@@ -25,7 +25,7 @@ public class Lukija {
      * @param tiedosto käyttäjän antama tekstitiedosto 
      */
     public void lisaaTiedosto(File tiedosto){
-        
+        Rivit = new Taulukko();
         Scanner lukija = null;
         try {
             lukija = new Scanner(tiedosto);
@@ -37,6 +37,7 @@ public class Lukija {
         while(lukija.hasNextLine()){
             r++;
             String rivi = lukija.nextLine();
+            Rivit.lisaa(rivi);
             String[] sanat = rivi.split(" ");
             for(int i = 0; i< sanat.length; i++){
                 puu.lisays(sanat[i], r);

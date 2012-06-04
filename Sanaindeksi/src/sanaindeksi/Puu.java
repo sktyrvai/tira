@@ -62,24 +62,56 @@ public class Puu {
      * @param sana käyttäjän hakema sana
      * @return boolean löytyikö sana tai sanalla alkava sana tekstisä
      */
+   
     
-    public boolean etsi(String sana){
+    /*public String etsi(String sana){
         Solmu nyt = this.juuri;
         for(int i = 0; i<sana.length(); i++){
             Solmu seur = nyt.lapsisolmu(sana.charAt(i));
             if(seur == null){
-                return false;
+                return "Ei löytynyt";
             } else nyt = seur;
         } 
-        System.out.print(nyt.Rivit);
-        haeRivit(nyt);
+        String all = nyt.getRivit();
+        all = all + haeRivit(nyt);
         
         /*for(Solmu s :nyt.getLapset()){
             if (s.getSananLoppu()){
                 System.out.println(s.Rivit);
             }
         }  
-        */
+       
+        System.out.println();
+        return all;
+    }
+    
+    private String haeRivit(Solmu nyt){
+        String riv = "";
+        for(Solmu s: nyt.getLapset()){
+            if(s.getSananLoppu()){
+                System.out.print(s.getRivit());
+            }
+            riv = riv + haeRivit(s);
+        }    
+        return riv;
+    }
+    * 
+   */
+    
+ 
+    
+    
+    public boolean etsi(String sana){
+        Solmu nyt = this.juuri;
+        for(int i = 0; i<sana.length(); i++){
+            Solmu seur = nyt.lapsisolmu(sana.charAt(i));
+            if(seur == null){
+             System.out.println("Ei löytynyt: " + sana);
+                return false;
+            } else nyt = seur;
+        }
+        System.out.print(nyt.getRivit());
+        haeRivit(nyt);
         System.out.println();
         return true;
     }
@@ -87,11 +119,13 @@ public class Puu {
     private void haeRivit(Solmu nyt){
         for(Solmu s: nyt.getLapset()){
             if(s.getSananLoppu()){
-                System.out.print(s.Rivit);
+                System.out.print(s.getRivit());
             }
             haeRivit(s);
-        }    
+        }
     }
+    
+    
     
     public Solmu getJuuri(){
         return this.juuri;

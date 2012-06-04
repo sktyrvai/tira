@@ -13,16 +13,14 @@ public class Solmu {
     private char merkki;
     private Taulukko Lapset;
     private boolean sananLoppu = false;
-    /**
-     * Rivit sisältää tiedot riveistä, joissa sana sijaitsee
-     */
-    ArrayList<Integer> Rivit;
+    private String rivit;
+    //ArrayList<Integer> Rivit;
     
     
     public Solmu(char merkki){
         this.merkki = merkki;
         Lapset = new Taulukko();  
-        Rivit = new ArrayList<Integer>();
+        this.rivit = "";
     }
     
     public void setMerkki(char merkki){
@@ -48,7 +46,8 @@ public class Solmu {
     }
     
     public void addRivi(int i){
-        Rivit.add((Integer) i);
+        String apu = this.rivit + " " +i;
+        this.rivit = apu;
     }
 
     /** 
@@ -92,8 +91,8 @@ public class Solmu {
         return s;
     }
     
-    public ArrayList<Integer> getRivit(){
-        return this.Rivit;
+    public String getRivit(){
+        return this.rivit;
     }
     
     public boolean getSananLoppu(){
@@ -102,13 +101,15 @@ public class Solmu {
            
     
     public String toString(){
-        String apu = "";
-        if(Rivit != null){
+        /*String apu = "";
+        if(rivit.length() != 0){
             for(Integer rivi: Rivit){
                 apu = apu + " " +rivi;
             }
         }
-        return this.getMerkki()+" "+ apu;
+        * 
+        */
+        return this.getMerkki()+" "+ rivit;
     }
             
    
