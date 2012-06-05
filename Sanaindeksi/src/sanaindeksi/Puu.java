@@ -8,11 +8,16 @@ package sanaindeksi;
  */
 public class Puu {
     private Solmu juuri;
+    private Taulukko Teksti;
     
     public Puu(){
         juuri = new Solmu(' ');        
     }
     
+    
+    public void setTeksti(Taulukko Teksti){
+        this.Teksti = Teksti;
+    }
     /**
      * Lisätään sana puuhun ja sanan viimeiseen kirjaimeen sanan päättyminen
      * @param sana tekstistä luettu sana
@@ -79,12 +84,10 @@ public class Puu {
             if (s.getSananLoppu()){
                 System.out.println(s.Rivit);
             }
-        }  
-       
+        }        
         System.out.println();
         return all;
-    }
-    
+    }    
     private String haeRivit(Solmu nyt){
         String riv = "";
         for(Solmu s: nyt.getLapset()){
@@ -96,21 +99,22 @@ public class Puu {
         return riv;
     }
     * 
-   */
-    
- 
-    
+   */    
     
     public boolean etsi(String sana){
+        System.out.println();
+        System.out.println("Etsitään sanaa " +sana);
         Solmu nyt = this.juuri;
         for(int i = 0; i<sana.length(); i++){
             Solmu seur = nyt.lapsisolmu(sana.charAt(i));
             if(seur == null){
-             System.out.println("Ei löytynyt: " + sana);
+             System.out.println("Ei löytynyt: " + sana + " :(");
                 return false;
             } else nyt = seur;
         }
-        System.out.print(nyt.getRivit());
+        tulostaRivit(nyt.getRivit());
+        //System.out.println(nyt.getRivit());
+        //tulosta
         haeRivit(nyt);
         System.out.println();
         return true;
@@ -119,13 +123,36 @@ public class Puu {
     private void haeRivit(Solmu nyt){
         for(Solmu s: nyt.getLapset()){
             if(s.getSananLoppu()){
-                System.out.print(s.getRivit());
+                //System.out.println(s.getRivit());
+                tulostaRivit(s.getRivit());
             }
             haeRivit(s);
         }
     }
     
+    private void tulostaRivit(String tieto){
+        String[] rivit = tieto.split(" ");
+        //for(int i = 0; i< rivit.length;i++){
+          //  System.out.print(rivit[i]+ ", ");
+        //}
+        for(int i = 0; i<rivit.length; i++){
+            if(onkoNumero(rivit[i])){
+                //System.out.println("Rivillä " +Integer.parseInt(rivit[i])+ " pitäisi esiintyvä etsitty sana rivi");
+                //System.out.println("Tekstin dynaamiusen taulukon koko " + Teksti.getKoko());
+                System.out.println("rivi "+ rivit[i] +" "+ Teksti.get(Integer.parseInt(rivit[i])));
+            }
+        }
+    }
     
+    
+    private boolean onkoNumero(String num){
+        for(char c: num.toCharArray()){
+            if(!Character.isDigit(c)){
+                return false;
+            }
+        }
+        return true;
+    }
     
     public Solmu getJuuri(){
         return this.juuri;
@@ -151,7 +178,5 @@ public class Puu {
 		return str;
 	}
     }
-    
-      
-    
+        
 }

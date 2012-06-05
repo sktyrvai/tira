@@ -46,7 +46,7 @@ public class Solmu {
     }
     
     public void addRivi(int i){
-        String apu = this.rivit + " " +i;
+        String apu = this.rivit + i+ " " ;
         this.rivit = apu;
     }
 

@@ -41,14 +41,16 @@ public class Sanaindeksi {
         lukija.lisaaTiedosto(new File("testi.txt"));
         //lukija.lisaaTiedosto(new File("testi2.txt"));
   
-        testipuu.etsi("rivi");
+        testipuu.etsi("rivit");
         
-        Solmu merimies = new Solmu('b');
+       /* Solmu merimies = new Solmu('b');
         merimies.uusiLapsi(new Solmu('s'));
         Solmu[] taulk = merimies.getLapset();
         System.out.println(taulk[0]+" nämä olivat mermiehen lapset");
+        */
         
-        //System.out.println(testipuu);
+        System.out.println(testipuu);
+        
         // TODO:
         //
         // sanahakuun rivitiedon tulostus!
