@@ -41,7 +41,7 @@ public class Sanaindeksi {
         lukija.lisaaTiedosto(new File("testi.txt"));
         //lukija.lisaaTiedosto(new File("testi2.txt"));
   
-        testipuu.etsi("rivit");
+        testipuu.etsi("rivi");
         
        /* Solmu merimies = new Solmu('b');
         merimies.uusiLapsi(new Solmu('s'));
@@ -53,11 +53,13 @@ public class Sanaindeksi {
         
         // TODO:
         //
-        // sanahakuun rivitiedon tulostus!
         // tee testejä
         // lisää sanojen loppuun tieto rivistä (eikö tämä ole jo?)
         // Hashmap tekstitiedostoille
         // miten solmu tietää rivinsä? String, jossa tiedosto ja perässä rivit?
+        // Tekstin talletus!        
+        // Tekstin tulostus ja talletus oma olionsa?
+        // jokainen solmu tietää missä kaikkialla esiintyy (nopeuttaisi hakiessa tulostusta)
         
     }
     

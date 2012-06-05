@@ -53,10 +53,14 @@ public class Puu {
                 Solmu x = new Solmu(sana.charAt(i));
                 nyt.uusiLapsi(x);
                 nyt = x;
-            } else nyt = seur;
+                nyt.addRivi(rivi);
+            } else{ 
+                nyt = seur;            
+                nyt.addRivi(rivi);
+            }
             if(i== sana.length()-1){
                     nyt.setSananLoppu(true);
-                    nyt.addRivi(rivi);
+                    //nyt.addRivi(rivi);
                 }          
         }
     }
@@ -115,7 +119,7 @@ public class Puu {
         tulostaRivit(nyt.getRivit());
         //System.out.println(nyt.getRivit());
         //tulosta
-        haeRivit(nyt);
+        //haeRivit(nyt);
         System.out.println();
         return true;
     }
