@@ -59,7 +59,6 @@ public class Sanaindeksi {
         // miten solmu tietää rivinsä? String, jossa tiedosto ja perässä rivit?
         // Tekstin talletus!        
         // Tekstin tulostus ja talletus oma olionsa?
-        // jokainen solmu tietää missä kaikkialla esiintyy (nopeuttaisi hakiessa tulostusta)
         
     }
     

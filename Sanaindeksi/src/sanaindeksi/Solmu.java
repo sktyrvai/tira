@@ -68,17 +68,6 @@ public class Solmu {
         return null;
     }
     
-    /*public Solmu[] getLapset(){
-     * Solmu[] s = new Solmu[Lapset.getKoko];
-     * for(int i = 1; i++; i< s.size()){
-     *  s = Lapset.get[i]
-     * } 
-     * return s;
-        return Lapset.getTaulukko();
-    }
-    * 
-    */
-    
     /**
      * Palauttaa taulukon, jossa vain solmun lapset 
      * @return taulukon s. s.size == Lapset.getKoko  
@@ -101,14 +90,6 @@ public class Solmu {
            
     
     public String toString(){
-        /*String apu = "";
-        if(rivit.length() != 0){
-            for(Integer rivi: Rivit){
-                apu = apu + " " +rivi;
-            }
-        }
-        * 
-        */
         return this.getMerkki()+" "+ rivit;
     }
             

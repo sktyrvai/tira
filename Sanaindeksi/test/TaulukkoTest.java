@@ -53,6 +53,19 @@ public class TaulukkoTest {
         assertTrue(taulukko.get(4).equals("mui") && perus(taulukko));
     }
     
+    /*
+     *lisätää tyhjään taulukkoon 100-200 alkiota, koko pysyy oikeana 
+     */
+    @Test
+    public void koko(){
+        taulukko = new Taulukko();
+        int k = (int) (Math.round(100*Math.random())+100);
+        for(int i = 0; i<k; i++){
+            taulukko.lisaa("eka");
+        }
+        assertTrue(taulukko.getKoko() == k);
+    }
+    
    
     private boolean perus(Taulukko taulukko){
         return (taulukko.getKoko() <= taulukko.getTaulukko().length);

@@ -19,7 +19,7 @@ public class Puu {
         this.Teksti = Teksti;
     }
     /**
-     * Lisätään sana puuhun ja sanan viimeiseen kirjaimeen sanan päättyminen
+     * Lisätään sana puuhun, jokaiseen sanan solmuun millä rivillä sijaitseee, ja sanan viimeiseen kirjaimeen sanan päättyminen
      * @param sana tekstistä luettu sana
      */
     public void lisays(String sana){
@@ -60,14 +60,12 @@ public class Puu {
             }
             if(i== sana.length()-1){
                     nyt.setSananLoppu(true);
-                    //nyt.addRivi(rivi);
                 }          
         }
     }
     
     /**
      * etsitään sana puusta ja tulotetaan esiintymisrivit
-     * palautetaan mielummin kaikki esiintymisrivit kerralla 
      * @param sana käyttäjän hakema sana
      * @return boolean löytyikö sana tai sanalla alkava sana tekstisä
      */
@@ -116,10 +114,9 @@ public class Puu {
                 return false;
             } else nyt = seur;
         }
+        // nyt vain yhden sanan haku
+        // useamman sanan haku, esim vertailemalla
         tulostaRivit(nyt.getRivit());
-        //System.out.println(nyt.getRivit());
-        //tulosta
-        //haeRivit(nyt);
         System.out.println();
         return true;
     }
@@ -127,27 +124,32 @@ public class Puu {
     private void haeRivit(Solmu nyt){
         for(Solmu s: nyt.getLapset()){
             if(s.getSananLoppu()){
-                //System.out.println(s.getRivit());
                 tulostaRivit(s.getRivit());
             }
             haeRivit(s);
         }
     }
     
+    /**
+     * Saa tiedon tulostettavista riveistä ja tulostaa rivit. 
+     * @param tieto solmun tieto riviesiintymisistään
+     */
     private void tulostaRivit(String tieto){
+        if(tieto.length() == 0){
+            return;
+        }
         String[] rivit = tieto.split(" ");
-        //for(int i = 0; i< rivit.length;i++){
-          //  System.out.print(rivit[i]+ ", ");
-        //}
         for(int i = 0; i<rivit.length; i++){
             if(onkoNumero(rivit[i])){
-                //System.out.println("Rivillä " +Integer.parseInt(rivit[i])+ " pitäisi esiintyvä etsitty sana rivi");
-                //System.out.println("Tekstin dynaamiusen taulukon koko " + Teksti.getKoko());
                 System.out.println("rivi "+ rivit[i] +" "+ Teksti.get(Integer.parseInt(rivit[i])));
             }
         }
     }
     
+    /**
+     *Tarkistaa onko saatu String numero
+     * 
+     */
     
     private boolean onkoNumero(String num){
         for(char c: num.toCharArray()){

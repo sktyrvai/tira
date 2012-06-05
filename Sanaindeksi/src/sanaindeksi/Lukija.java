@@ -16,7 +16,6 @@ import java.util.logging.Logger;
 public class Lukija {
     private Puu puu;
     public Taulukko Rivit;
-    
     public Lukija(Puu puu){
         this.puu = puu;
         
