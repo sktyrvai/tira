@@ -55,9 +55,11 @@ public class Sanaindeksi {
         //
         // tee testejä
         // lisää sanojen loppuun tieto rivistä (eikö tämä ole jo?)
-        // Hashmap tekstitiedostoille
-        // miten solmu tietää rivinsä? String, jossa tiedosto ja perässä rivit?
-        // Tekstin talletus!        
+        // Hashmap tekstitiedostoille EI!
+        // miten solmu tietää rivinsä? String, jossa tiedosto ja perässä rivit? EI!
+        // solmulla taulukko, jonka jokaista tiedostoa vastaavassa kohdassa tieto sanan esiintymisestä ko. rivillä
+        //
+        // Tekstin talletus! Jokainen tiedosto omassa taulukossaan        
         // Tekstin tulostus ja talletus oma olionsa?
         
     }
