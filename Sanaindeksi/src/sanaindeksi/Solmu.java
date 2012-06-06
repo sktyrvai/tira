@@ -14,6 +14,7 @@ public class Solmu {
     private Taulukko Lapset;
     private boolean sananLoppu = false;
     private String rivit;
+    private String[] rivitiedot;
     //ArrayList<Integer> Rivit;
     
     

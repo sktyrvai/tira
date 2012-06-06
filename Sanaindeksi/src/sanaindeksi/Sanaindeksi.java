@@ -28,8 +28,10 @@ public class Sanaindeksi {
         Lukija lukija = new Lukija(testipuu);
         
         if(args.length == 0){
+           System.out.println("Kuinka monta tiedostoa annat?");
+            
            System.out.println("Anna tekstitiedostot:");
-           //tähän joko for-looppi ja jokainen tiedosto erikseen tai sitten kaikki kerralla, kuten yllä
+           //looppi
         }
         else{
             for(int i= 0; i< args.length; i++){
