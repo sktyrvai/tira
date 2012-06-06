@@ -21,6 +21,7 @@ public class Solmu {
         this.merkki = merkki;
         Lapset = new Taulukko();  
         this.rivit = "";
+        
     }
     
     public void setMerkki(char merkki){

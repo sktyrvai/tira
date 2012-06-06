@@ -14,6 +14,7 @@ import java.util.logging.Logger;
  * @version 280512
  */
 public class Lukija {
+
     private Puu puu;
     public Taulukko Rivit;
     public Lukija(Puu puu){
@@ -26,6 +27,7 @@ public class Lukija {
      * @param tiedosto käyttäjän antama tekstitiedosto 
      */
     public void lisaaTiedosto(File tiedosto){
+        String tiedostonNimi = tiedosto.getName();
         //tämä pitää oikeasti tehdä muualla kuin tässä
         Rivit = new Taulukko();
         Scanner lukija = null;
