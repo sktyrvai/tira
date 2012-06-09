@@ -50,7 +50,6 @@ public class Lukija {
             System.out.println(rivi);          
         }
         System.out.println("tekstin sisältävän dynaamisen taulukon koko " +Rivit.getKoko());
-        //this.puu.setTeksti(Rivit);
         tiedostoja ++;
         return Rivit;
     }

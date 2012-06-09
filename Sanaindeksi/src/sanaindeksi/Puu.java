@@ -8,16 +8,18 @@ package sanaindeksi;
  */
 public class Puu {
     private Solmu juuri;
-    private Taulukko Teksti;
+    //private Taulukko Teksti;
     
     public Puu(){
         juuri = new Solmu(' ');        
     }
     
     
-    public void setTeksti(Taulukko Teksti){
+    /*public void setTeksti(Taulukko Teksti){
         this.Teksti = Teksti;
     }
+    * 
+    */
     /**
      * Lisätään sana puuhun, jokaiseen sanan solmuun millä rivillä sijaitseee, ja sanan viimeiseen kirjaimeen sanan päättyminen
      * @param sana tekstistä luettu sana
@@ -42,6 +44,7 @@ public class Puu {
      * Lisätään puuhun sana ja sanan viimeiseen merkkiin sanan päättyminen ja esiintymisrivi 
      * @param sana tekstistä luettu sana
      * @param rivi tekstin rivi, jossa sana esiintyi
+     * @param tied mones tiedosto kyseessä (indeksointi alkaa nollasta)
      * 
      */
     public void lisays(String sana, int rivi, int tied){
@@ -67,42 +70,10 @@ public class Puu {
     /**
      * etsitään sana puusta ja tulotetaan esiintymisrivit
      * @param sana käyttäjän hakema sana
-     * @return boolean löytyikö sana tai sanalla alkava sana tekstisä
+     * @return String[] jos sana löytyi palauta viimeisen solmun rivitiedot
      */
    
-    
-    /*public String etsi(String sana){
-        Solmu nyt = this.juuri;
-        for(int i = 0; i<sana.length(); i++){
-            Solmu seur = nyt.lapsisolmu(sana.charAt(i));
-            if(seur == null){
-                return "Ei löytynyt";
-            } else nyt = seur;
-        } 
-        String all = nyt.getRivit();
-        all = all + haeRivit(nyt);
-        
-        /*for(Solmu s :nyt.getLapset()){
-            if (s.getSananLoppu()){
-                System.out.println(s.Rivit);
-            }
-        }        
-        System.out.println();
-        return all;
-    }    
-    private String haeRivit(Solmu nyt){
-        String riv = "";
-        for(Solmu s: nyt.getLapset()){
-            if(s.getSananLoppu()){
-                System.out.print(s.getRivit());
-            }
-            riv = riv + haeRivit(s);
-        }    
-        return riv;
-    }
-    * 
-   */    
-    
+     
     public String[] etsi(String sana){
         System.out.println();
         System.out.println("Etsitään sanaa " +sana);
@@ -114,29 +85,16 @@ public class Puu {
                 return null;
             } else nyt = seur;
         }
-        // nyt vain yhden sanan haku
-        // useamman sanan haku, esim vertailemalla
-        //tulostaRivit(nyt.getRivit());
         //System.out.println();
         return nyt.getRivit();
     }
-    
-    /*private void haeRivit(Solmu nyt){
-        for(Solmu s: nyt.getLapset()){
-            if(s.getSananLoppu()){
-                tulostaRivit(s.getRivit());
-            }
-            haeRivit(s);
-        }
-    }
-    * 
-    */
+   
     
     /**
      * Saa tiedon tulostettavista riveistä ja tulostaa rivit. 
      * @param tieto solmun tieto riviesiintymisistään
      */
-    private void tulostaRivit(String tieto){
+    /*private void tulostaRivit(String tieto){
         if(tieto.length() == 0){
             return;
         }
@@ -147,6 +105,8 @@ public class Puu {
             }
         }
     }
+    * 
+    */
     
     /**
      *Tarkistaa onko saatu String numero
