@@ -23,19 +23,27 @@ public class Sanaindeksi {
                     
         Puu testipuu = new Puu();
         Lukija lukija = new Lukija(testipuu);
-        String[] tiedostot = new String[2];
-        Taulukko[] tekstit = new Taulukko[2];
+        String[] tiedostot; 
+        Taulukko[] tekstit; 
+        int tiedlkm = args.length;
         
-        if(args.length == 0){
-           System.out.println("Kuinka monta tiedostoa annat?");
+        
+        if(tiedlkm > 0){
+            tiedostot = new String[tiedlkm];
+            tekstit = new Taulukko[tiedlkm];
             
-           System.out.println("Anna tekstitiedostot:");
-           //looppi
-        }
-        else{
-            for(int i= 0; i< args.length; i++){
+            for(int i= 0; i< args.length; i++){ 
                 lukija.lisaaTiedosto(new File(args[i]));
             }
+        }
+        else{
+            System.out.println("Kuinka monta tiedostoa annat?");
+            tiedlkm = 2;
+            tiedostot = new String[tiedlkm];
+            tekstit = new Taulukko[tiedlkm];
+            System.out.println("Anna tekstitiedostot:");
+ 
+            
         }
         //tekstit = new Taulukko[2];
         //tiedostot = new Tiedostot[2];
