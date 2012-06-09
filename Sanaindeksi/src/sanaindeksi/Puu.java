@@ -44,7 +44,7 @@ public class Puu {
      * @param rivi tekstin rivi, jossa sana esiintyi
      * 
      */
-    public void lisays(String sana, int rivi){
+    public void lisays(String sana, int rivi, int tied){
         Solmu nyt = this.juuri;
         
         for(int i = 0; i< sana.length(); i++ ){
@@ -53,10 +53,10 @@ public class Puu {
                 Solmu x = new Solmu(sana.charAt(i));
                 nyt.uusiLapsi(x);
                 nyt = x;
-                nyt.addRivi(rivi);
+                nyt.addRivi(rivi, tied);
             } else{ 
                 nyt = seur;            
-                nyt.addRivi(rivi);
+                nyt.addRivi(rivi, tied);
             }
             if(i== sana.length()-1){
                     nyt.setSananLoppu(true);
@@ -116,12 +116,12 @@ public class Puu {
         }
         // nyt vain yhden sanan haku
         // useamman sanan haku, esim vertailemalla
-        tulostaRivit(nyt.getRivit());
+        //tulostaRivit(nyt.getRivit());
         System.out.println();
         return true;
     }
     
-    private void haeRivit(Solmu nyt){
+    /*private void haeRivit(Solmu nyt){
         for(Solmu s: nyt.getLapset()){
             if(s.getSananLoppu()){
                 tulostaRivit(s.getRivit());
@@ -129,6 +129,8 @@ public class Puu {
             haeRivit(s);
         }
     }
+    * 
+    */
     
     /**
      * Saa tiedon tulostettavista riveistä ja tulostaa rivit. 

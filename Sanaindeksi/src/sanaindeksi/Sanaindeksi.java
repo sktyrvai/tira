@@ -26,6 +26,8 @@ public class Sanaindeksi {
                     
         Puu testipuu = new Puu();
         Lukija lukija = new Lukija(testipuu);
+        String[] tiedostot = new String[2];
+        Taulukko[] tekstit = new Taulukko[2];
         
         if(args.length == 0){
            System.out.println("Kuinka monta tiedostoa annat?");
@@ -38,20 +40,34 @@ public class Sanaindeksi {
                 lukija.lisaaTiedosto(new File(args[i]));
             }
         }
+        //tekstit = new Taulukko[2];
+        //tiedostot = new Tiedostot[2];
         
-        File tied = new File("testi.txt");
-        lukija.lisaaTiedosto(new File("testi.txt"));
-        //lukija.lisaaTiedosto(new File("testi2.txt"));
-  
-        testipuu.etsi("rivi");
+        Taulukko teksti;
+        File tied;
+        //for(int i = 0; i<; i++){
+        tied = new File("testi.txt");       
+        tiedostot[0] = tied.getName();
+        teksti = lukija.lisaaTiedosto(tied);
+        tekstit[0] = teksti;
+        tied = new File("testi2.txt");
+        tiedostot[1] = tied.getName();
+        teksti = lukija.lisaaTiedosto(tied);
+        tekstit[1] = teksti;
         
+        //testipuu.etsi("rivi");
+        for(int i = 0; i<2; i++){
+            System.out.println(tiedostot[i]);                
+        }
+        
+        System.out.println(tiedostot[0] +" "+tekstit[0].get(1));
        /* Solmu merimies = new Solmu('b');
         merimies.uusiLapsi(new Solmu('s'));
         Solmu[] taulk = merimies.getLapset();
         System.out.println(taulk[0]+" nämä olivat mermiehen lapset");
         */
         
-        System.out.println(testipuu);
+        //System.out.println(testipuu);
         
         // TODO:
         //

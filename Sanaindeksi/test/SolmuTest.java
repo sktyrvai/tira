@@ -86,7 +86,7 @@ public class SolmuTest {
     }
     
     @Test
-    public void kokeilu(){
+    public void yksiLapsi(){
         merimies = new Solmu('b');
         merimies.uusiLapsi(new Solmu('s'));
         Solmu[] t = merimies.getLapset();

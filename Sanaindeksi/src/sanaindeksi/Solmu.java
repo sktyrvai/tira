@@ -22,7 +22,7 @@ public class Solmu {
         this.merkki = merkki;
         Lapset = new Taulukko();  
         this.rivit = "";
-        
+        this.rivitiedot = new String[2];
     }
     
     public void setMerkki(char merkki){
@@ -47,9 +47,9 @@ public class Solmu {
         }
     }
     
-    public void addRivi(int i){
-        String apu = this.rivit + i+ " " ;
-        this.rivit = apu;
+    public void addRivi(int i, int tied){
+        String apu = this.rivitiedot[tied] + i+ " " ;
+        this.rivitiedot[tied] = apu;
     }
 
     /** 
@@ -82,8 +82,8 @@ public class Solmu {
         return s;
     }
     
-    public String getRivit(){
-        return this.rivit;
+    public String[] getRivit(){
+        return this.rivitiedot;
     }
     
     public boolean getSananLoppu(){
@@ -92,7 +92,11 @@ public class Solmu {
            
     
     public String toString(){
-        return this.getMerkki()+" "+ rivit;
+        String apu = "";
+        for(int i = 0; i<rivitiedot.length; i++){
+            apu = apu + i+ ": " +rivitiedot[i];
+        }
+        return this.getMerkki()+" "+ this.rivitiedot;
     }
             
    
