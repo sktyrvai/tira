@@ -1,5 +1,6 @@
-uusi parempi
+﻿uusi parempi
 testaus tiedosto
+rivin etsintää
 tähän olisi voinut etsiä 
 modernin runon
 jääkaappi

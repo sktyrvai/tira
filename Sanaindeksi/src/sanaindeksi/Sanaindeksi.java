@@ -55,19 +55,17 @@ public class Sanaindeksi {
         teksti = lukija.lisaaTiedosto(tied);
         tekstit[1] = teksti;
         
-       String[] rivit = testipuu.etsi("rivi");
-        /*for(int k = 0; k<rivit.length; k++){
-            String[] blah = rivit[k].split(" ");
-            for(int i = 0; i<blah.length; i++){
-                if(onkoNumero(blah[i])){
-                System.out.println(Integer.parseInt(blah[i]));
-                //System.out.println(tiedostot[k] + " " + tekstit[k].get(Integer.parseInt(blah[i])));                
-                }
+       Taulukko[] rivit = testipuu.etsi("rivin");
+        for(int k = 0; k<rivit.length; k++){     
+            for(int i = 0; i<rivit[k].getKoko(); i++){ 
+                int rivinro = (Integer) rivit[k].get(i+1);
+                System.out.print(rivinro);
+                System.out.println(tiedostot[k] + " "+rivinro +" "+ tekstit[k].get(rivinro));                             
             }
+            System.out.println();
                 
         }
-        * 
-        */
+        
         
   
          
@@ -91,14 +89,6 @@ public class Sanaindeksi {
         // Tekstin talletus! Jokainen tiedosto omassa taulukossaan        
         // Tekstin tulostus ja talletus oma olionsa?
         
-    }
-     static boolean onkoNumero(String num){
-        for(char c: num.toCharArray()){
-            if(!Character.isDigit(c)){
-                return false;
-            }
-        }
-        return true;
     }
     
 }

@@ -74,7 +74,7 @@ public class Puu {
      */
    
      
-    public String[] etsi(String sana){
+    public Taulukko[] etsi(String sana){
         System.out.println();
         System.out.println("Etsitään sanaa " +sana);
         Solmu nyt = this.juuri;

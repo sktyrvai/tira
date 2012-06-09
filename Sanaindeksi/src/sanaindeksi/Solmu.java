@@ -14,7 +14,7 @@ public class Solmu {
     private Taulukko Lapset;
     private boolean sananLoppu = false;
     //private String rivit;
-    private String[] rivitiedot;
+    private Taulukko[] rivitiedot;
     //ArrayList<Integer> Rivit;
     
     
@@ -22,9 +22,9 @@ public class Solmu {
         this.merkki = merkki;
         Lapset = new Taulukko();  
         //this.rivit = "";
-        this.rivitiedot = new String[2];
-        for(int i = 0; i<rivitiedot.length; i++){
-            this.rivitiedot[i] = "";
+        this.rivitiedot = new Taulukko[2];
+       for(int i = 0; i<rivitiedot.length; i++){
+           this.rivitiedot[i] = new Taulukko();
         }
     }
     
@@ -50,11 +50,8 @@ public class Solmu {
         }
     }
     
-    public void addRivi(int i, int tied){
-        System.out.println("rivin lisäyksessä rivitiedot ennen: "+this.rivitiedot[tied] );
-        String apu = this.rivitiedot[tied] + i+ " " ;
-        this.rivitiedot[tied] = apu;
-        System.out.println("rivin lisäyksessä rivitiedot jälkeen: "+this.rivitiedot[tied]);
+    public void addRivi(int i, int tied){        
+        this.rivitiedot[tied].lisaa((Integer) i);
     }
 
     /** 
@@ -87,7 +84,7 @@ public class Solmu {
         return s;
     }
     
-    public String[] getRivit(){
+    public Taulukko[] getRivit(){
         return this.rivitiedot;
     }
     
@@ -96,18 +93,20 @@ public class Solmu {
     }
            
     public String taah(){
-        String pal = "Rivitiedosto: ";
+        String apu = "Rivitiedosto: ";
         for(int i = 0; i<rivitiedot.length; i++){
-            pal = pal + " " +i+": " + rivitiedot[i] +", ";
+            apu = apu + i+":  ";
+            for(int k = 1; k <= rivitiedot[i].getKoko(); k++){
+                apu = apu + " "+rivitiedot[i].get(k);
+            }
+            apu = apu + " ";
         }
 
-        return pal;
+        return apu;
     }
+    
     public String toString(){
-        String apu = "";
-        for(int i = 0; i<rivitiedot.length; i++){
-            apu = apu + i+ ": " +rivitiedot[i] + " ";
-        }
+        
         return this.getMerkki()+" "+ this.taah();
     }
             
