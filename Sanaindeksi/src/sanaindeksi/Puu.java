@@ -2,26 +2,20 @@
 package sanaindeksi;
 
 /**
- *
+ * Trie-puu, johon voi lisätä sanoja ja niitä ja niiden alkuja voi etsiä. Tuntee juurisolmunsa.
  * @author Sanna Tyrväinen
  * @version
  */
 public class Puu {
     private Solmu juuri;
-    //private Taulukko Teksti;
+    
     
     public Puu(){
         juuri = new Solmu(' ');        
     }
     
-    
-    /*public void setTeksti(Taulukko Teksti){
-        this.Teksti = Teksti;
-    }
-    * 
-    */
     /**
-     * Lisätään sana puuhun, jokaiseen sanan solmuun millä rivillä sijaitseee, ja sanan viimeiseen kirjaimeen sanan päättyminen
+     * Lisätään sana puuhun ja sanan viimeiseen kirjaimeen sanan päättyminen
      * @param sana tekstistä luettu sana
      */
     public void lisays(String sana){
@@ -41,7 +35,7 @@ public class Puu {
     }
     
     /**
-     * Lisätään puuhun sana ja sanan viimeiseen merkkiin sanan päättyminen ja esiintymisrivi 
+     * Lisätään sana puuhun, jokaiseen sanan solmuun millä rivillä sijaitseee, ja sanan viimeiseen kirjaimeen sanan päättyminen
      * @param sana tekstistä luettu sana
      * @param rivi tekstin rivi, jossa sana esiintyi
      * @param tied mones tiedosto kyseessä (indeksointi alkaa nollasta)
@@ -68,12 +62,10 @@ public class Puu {
     }
     
     /**
-     * etsitään sana puusta ja tulotetaan esiintymisrivit
+     * etsitään sana puusta ja palautetaan sanan viimeisen kirjaimen solmun rivitiedot
      * @param sana käyttäjän hakema sana
      * @return String[] jos sana löytyi palauta viimeisen solmun rivitiedot
-     */
-   
-     
+     */    
     public Taulukko[] etsi(String sana){
         System.out.println();
         System.out.println("Etsitään sanaa " +sana);
@@ -85,42 +77,10 @@ public class Puu {
                 return null;
             } else nyt = seur;
         }
-        //System.out.println();
         return nyt.getRivit();
     }
    
-    
-    /**
-     * Saa tiedon tulostettavista riveistä ja tulostaa rivit. 
-     * @param tieto solmun tieto riviesiintymisistään
-     */
-    /*private void tulostaRivit(String tieto){
-        if(tieto.length() == 0){
-            return;
-        }
-        String[] rivit = tieto.split(" ");
-        for(int i = 0; i<rivit.length; i++){
-            if(onkoNumero(rivit[i])){
-                System.out.println("rivi "+ rivit[i] +" "+ Teksti.get(Integer.parseInt(rivit[i])));
-            }
-        }
-    }
-    * 
-    */
-    
-    /**
-     *Tarkistaa onko saatu String numero
-     * 
-     */
-    
-    private boolean onkoNumero(String num){
-        for(char c: num.toCharArray()){
-            if(!Character.isDigit(c)){
-                return false;
-            }
-        }
-        return true;
-    }
+
     
     public Solmu getJuuri(){
         return this.juuri;

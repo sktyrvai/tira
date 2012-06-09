@@ -3,7 +3,7 @@ package sanaindeksi;
 import java.util.ArrayList;
 
 /**
- *
+ * Solmu, joka säilyttää merkkiä ja siihen päättyvän sanan rivitietoja. Säilyttää lapsiaan Taulukossa. 
  * @author Sanna Tyrväinen
  * @version
  */
@@ -12,10 +12,8 @@ public class Solmu {
 
     private char merkki;
     private Taulukko Lapset;
-    private boolean sananLoppu = false;
-    //private String rivit;
+    private boolean sananLoppu = false;  
     private Taulukko[] rivitiedot;
-    //ArrayList<Integer> Rivit;
     
     
     public Solmu(char merkki){
@@ -49,6 +47,11 @@ public class Solmu {
             Lapset.lisaa(s);
         }
     }
+    /**
+     * Lisää solmulle uuden riviesiintymisen
+     * @param i mones rivi
+     * @param tied Monennesta tiedostosta rivi on.   
+     */
     
     public void addRivi(int i, int tied){        
         this.rivitiedot[tied].lisaa((Integer) i);
@@ -92,7 +95,7 @@ public class Solmu {
         return this.sananLoppu;   
     }
            
-    public String taah(){
+    private String tulostuksenApu(){
         String apu = "Rivitiedosto: ";
         for(int i = 0; i<rivitiedot.length; i++){
             apu = apu + i+":  ";
@@ -104,10 +107,13 @@ public class Solmu {
 
         return apu;
     }
+    /**
+     * 
+     * @return Solmussa olevan merkin ja sen rivitiedot tiedostottain 
+     */
     
-    public String toString(){
-        
-        return this.getMerkki()+" "+ this.taah();
+    public String toString(){        
+        return this.getMerkki()+" "+ this.tulostuksenApu();
     }
             
    

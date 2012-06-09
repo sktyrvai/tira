@@ -6,10 +6,7 @@ package sanaindeksi;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -56,10 +53,10 @@ public class Sanaindeksi {
         tekstit[1] = teksti;
         
        Taulukko[] rivit = testipuu.etsi("rivin");
+       
         for(int k = 0; k<rivit.length; k++){     
             for(int i = 0; i<rivit[k].getKoko(); i++){ 
                 int rivinro = (Integer) rivit[k].get(i+1);
-                System.out.print(rivinro);
                 System.out.println(tiedostot[k] + " "+rivinro +" "+ tekstit[k].get(rivinro));                             
             }
             System.out.println();
