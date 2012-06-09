@@ -65,7 +65,7 @@ public class PuuTest {
             int k = (int) Math.round((sanat.length-1)*Math.random()); //0< k <sanat.length
             int l = sanat[k].length() - (int) (Math.round((sanat[k].length()-1)*Math.random()));
             String etsi = sanat[k].substring(0, l);
-            assertTrue(p.etsi(etsi));
+            assertTrue(p.etsi(etsi)!= null);
         }
     }
 }

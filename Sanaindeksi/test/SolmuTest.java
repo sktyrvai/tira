@@ -37,7 +37,7 @@ public class SolmuTest {
     @Test
     public void alussaTyhja(){
         merimies = new Solmu((char) ('a' + Math.round(25*Math.random())));
-        assertTrue(merimies.getLapset().length == 0 && merimies.getRivit().isEmpty());
+        assertTrue(merimies.getLapset().length == 0 && merimies.getRivit().length==0);
     }
     
     @Test
