@@ -55,11 +55,22 @@ public class Sanaindeksi {
         teksti = lukija.lisaaTiedosto(tied);
         tekstit[1] = teksti;
         
-        //testipuu.etsi("rivi");
-        for(int i = 0; i<2; i++){
-            System.out.println(tiedostot[i]);                
+       String[] rivit = testipuu.etsi("rivi");
+        /*for(int k = 0; k<rivit.length; k++){
+            String[] blah = rivit[k].split(" ");
+            for(int i = 0; i<blah.length; i++){
+                if(onkoNumero(blah[i])){
+                System.out.println(Integer.parseInt(blah[i]));
+                //System.out.println(tiedostot[k] + " " + tekstit[k].get(Integer.parseInt(blah[i])));                
+                }
+            }
+                
         }
+        * 
+        */
         
+  
+         
         System.out.println(tiedostot[0] +" "+tekstit[0].get(1));
        /* Solmu merimies = new Solmu('b');
         merimies.uusiLapsi(new Solmu('s'));
@@ -67,7 +78,7 @@ public class Sanaindeksi {
         System.out.println(taulk[0]+" nämä olivat mermiehen lapset");
         */
         
-        //System.out.println(testipuu);
+        System.out.println(testipuu);
         
         // TODO:
         //
@@ -81,6 +92,13 @@ public class Sanaindeksi {
         // Tekstin tulostus ja talletus oma olionsa?
         
     }
-    
+     static boolean onkoNumero(String num){
+        for(char c: num.toCharArray()){
+            if(!Character.isDigit(c)){
+                return false;
+            }
+        }
+        return true;
+    }
     
 }

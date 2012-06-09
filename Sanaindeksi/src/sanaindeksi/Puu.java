@@ -103,7 +103,7 @@ public class Puu {
     * 
    */    
     
-    public boolean etsi(String sana){
+    public String[] etsi(String sana){
         System.out.println();
         System.out.println("Etsitään sanaa " +sana);
         Solmu nyt = this.juuri;
@@ -111,14 +111,14 @@ public class Puu {
             Solmu seur = nyt.lapsisolmu(sana.charAt(i));
             if(seur == null){
              System.out.println("Ei löytynyt: " + sana + " :(");
-                return false;
+                return null;
             } else nyt = seur;
         }
         // nyt vain yhden sanan haku
         // useamman sanan haku, esim vertailemalla
         //tulostaRivit(nyt.getRivit());
-        System.out.println();
-        return true;
+        //System.out.println();
+        return nyt.getRivit();
     }
     
     /*private void haeRivit(Solmu nyt){

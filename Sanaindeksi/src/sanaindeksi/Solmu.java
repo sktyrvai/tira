@@ -13,7 +13,7 @@ public class Solmu {
     private char merkki;
     private Taulukko Lapset;
     private boolean sananLoppu = false;
-    private String rivit;
+    //private String rivit;
     private String[] rivitiedot;
     //ArrayList<Integer> Rivit;
     
@@ -21,8 +21,11 @@ public class Solmu {
     public Solmu(char merkki){
         this.merkki = merkki;
         Lapset = new Taulukko();  
-        this.rivit = "";
+        //this.rivit = "";
         this.rivitiedot = new String[2];
+        for(int i = 0; i<rivitiedot.length; i++){
+            this.rivitiedot[i] = "";
+        }
     }
     
     public void setMerkki(char merkki){
@@ -48,8 +51,10 @@ public class Solmu {
     }
     
     public void addRivi(int i, int tied){
+        System.out.println("rivin lisäyksessä rivitiedot ennen: "+this.rivitiedot[tied] );
         String apu = this.rivitiedot[tied] + i+ " " ;
         this.rivitiedot[tied] = apu;
+        System.out.println("rivin lisäyksessä rivitiedot jälkeen: "+this.rivitiedot[tied]);
     }
 
     /** 
@@ -90,13 +95,20 @@ public class Solmu {
         return this.sananLoppu;   
     }
            
-    
+    public String taah(){
+        String pal = "Rivitiedosto: ";
+        for(int i = 0; i<rivitiedot.length; i++){
+            pal = pal + " " +i+": " + rivitiedot[i] +", ";
+        }
+
+        return pal;
+    }
     public String toString(){
         String apu = "";
         for(int i = 0; i<rivitiedot.length; i++){
-            apu = apu + i+ ": " +rivitiedot[i];
+            apu = apu + i+ ": " +rivitiedot[i] + " ";
         }
-        return this.getMerkki()+" "+ this.rivitiedot;
+        return this.getMerkki()+" "+ this.taah();
     }
             
    

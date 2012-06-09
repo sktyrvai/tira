@@ -30,8 +30,6 @@ public class Lukija {
      * @param tiedosto käyttäjän antama tekstitiedosto 
      */
     public Taulukko lisaaTiedosto(File tiedosto){
-        //String tiedostonNimi = tiedosto.getName();
-        //tämä pitää oikeasti tehdä muualla kuin tässä
         Rivit = new Taulukko();
         Scanner lukija = null;
         try {
@@ -52,7 +50,7 @@ public class Lukija {
             System.out.println(rivi);          
         }
         System.out.println("tekstin sisältävän dynaamisen taulukon koko " +Rivit.getKoko());
-        this.puu.setTeksti(Rivit);
+        //this.puu.setTeksti(Rivit);
         tiedostoja ++;
         return Rivit;
     }
