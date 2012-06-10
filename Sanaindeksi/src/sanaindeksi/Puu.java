@@ -87,8 +87,8 @@ public class Puu {
     }
     
     /*Esa Junttilan Trie-puun tulostus
-     * http://www.cs.helsinki.fi/u/ejunttil/opetus/tiraharjoitus/treeprint.txt
-     */
+     * http://www.cs.helsinki.fi/u/ejunttil/opetus/tiraharjoitus/treeprint.txt 
+    */
     
     public String toString() {
 	return this.toStringHelp(this.juuri, "");

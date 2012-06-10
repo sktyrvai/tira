@@ -28,27 +28,31 @@ public class Sanaindeksi {
         int tiedlkm = args.length;
         
         
-        if(tiedlkm > 0){
-            tiedostot = new String[tiedlkm];
-            tekstit = new Taulukko[tiedlkm];
+        if(tiedlkm == 0){
+            System.out.println("Kuinka monta tiedostoa annat?");
+            tiedlkm = 2;
+            tiedostot = new String[] {"testi.txt", "testi2.txt"};
+            //tiedostot = new String[tiedlkm];         
+            System.out.println("Anna tiedostot ("+ tiedlkm +" kpl) välilyönnillä eroteltuna.");
             
             for(int i= 0; i< args.length; i++){ 
                 lukija.lisaaTiedosto(new File(args[i]));
             }
         }
-        else{
-            System.out.println("Kuinka monta tiedostoa annat?");
-            tiedlkm = 2;
-            tiedostot = new String[tiedlkm];
-            tekstit = new Taulukko[tiedlkm];
-            System.out.println("Anna tekstitiedostot:");
- 
-            
+        else{ tiedostot = args;
+            tiedlkm = tiedostot.length;         
         }
-        //tekstit = new Taulukko[2];
-        //tiedostot = new Tiedostot[2];
-        
+            
+        tekstit = new Taulukko[tiedlkm];
+      
         Taulukko teksti;
+        for(int i= 0; i< tiedlkm; i++){ 
+               teksti = lukija.lisaaTiedosto(new File(tiedostot[i]));
+               tekstit[i] = teksti;
+        }
+       
+        
+        /*
         File tied;
         //for(int i = 0; i<; i++){
         tied = new File("testi.txt");       
@@ -60,7 +64,12 @@ public class Sanaindeksi {
         teksti = lukija.lisaaTiedosto(tied);
         tekstit[1] = teksti;
         
-       Taulukko[] rivit = testipuu.etsi("rivin");
+        * 
+        */
+        System.out.println("..............................");
+        System.out.println("Tekstitiedostot luettu.");
+        System.out.println("Anna etsittävä sana.");
+        Taulukko[] rivit = testipuu.etsi("rivin");
        
         for(int k = 0; k<rivit.length; k++){     
             for(int i = 0; i<rivit[k].getKoko(); i++){ 
@@ -73,26 +82,16 @@ public class Sanaindeksi {
         
         
   
-         
-        System.out.println(tiedostot[0] +" "+tekstit[0].get(1));
-       /* Solmu merimies = new Solmu('b');
-        merimies.uusiLapsi(new Solmu('s'));
-        Solmu[] taulk = merimies.getLapset();
-        System.out.println(taulk[0]+" nämä olivat mermiehen lapset");
-        */
+        
         
         System.out.println(testipuu);
         
         // TODO:
         //
-        // tee testejä
-        // lisää sanojen loppuun tieto rivistä (eikö tämä ole jo?)
-        // Hashmap tekstitiedostoille EI!
-        // miten solmu tietää rivinsä? String, jossa tiedosto ja perässä rivit? EI!
-        // solmulla taulukko, jonka jokaista tiedostoa vastaavassa kohdassa tieto sanan esiintymisestä ko. rivillä
-        //
-        // Tekstin talletus! Jokainen tiedosto omassa taulukossaan        
+        // tee testejä       
         // Tekstin tulostus ja talletus oma olionsa?
+        //monen sanan haku
+        // yleistä yli kolmelle tiedostolle
         
     }
     
