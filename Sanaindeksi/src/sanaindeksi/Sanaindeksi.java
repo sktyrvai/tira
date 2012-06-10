@@ -21,7 +21,7 @@ public class Sanaindeksi {
     public static Scanner lukija = new Scanner(System.in);
     public static void main(String[] args) {
                     
-        Puu testipuu = new Puu();
+        Puu testipuu = new Puu();// puu saa tiedostojen lkm:n?
         Lukija puulukija = new Lukija(testipuu);
         String[] tiedostot; 
         Taulukko[] tekstit; 
@@ -31,7 +31,7 @@ public class Sanaindeksi {
         if(tiedlkm == 0){
             System.out.println("Kuinka monta tiedostoa annat?");
             tiedlkm = lukija.nextInt();
-            tiedlkm = 2;
+            tiedlkm = 2; // poista
             tiedostot = new String[] {"testi.txt", "testi2.txt"};
             //tiedostot = new String[tiedlkm];         
             System.out.println("Anna tiedostot ("+ tiedlkm +" kpl) välilyönnillä eroteltuna.");
@@ -47,7 +47,8 @@ public class Sanaindeksi {
         }
             
         tekstit = new Taulukko[tiedlkm];
-      
+        
+        //luo tässä puulukija ja puu?
         Taulukko teksti;
         for(int i= 0; i< tiedlkm; i++){ 
                teksti = puulukija.lisaaTiedosto(new File(tiedostot[i]));
@@ -97,7 +98,7 @@ public class Sanaindeksi {
         //
         // tee testejä       
         // Tekstin tulostus ja talletus oma olionsa?
-        //monen sanan haku
+        // monen sanan haku
         // yleistä yli kolmelle tiedostolle
         
     }
