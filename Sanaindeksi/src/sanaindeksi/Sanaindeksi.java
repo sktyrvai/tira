@@ -18,11 +18,11 @@ public class Sanaindeksi {
     /**
      * @param args käytettävät tekstitiedostot .txt
      */
-    
+    public static Scanner lukija = new Scanner(System.in);
     public static void main(String[] args) {
                     
         Puu testipuu = new Puu();
-        Lukija lukija = new Lukija(testipuu);
+        Lukija puulukija = new Lukija(testipuu);
         String[] tiedostot; 
         Taulukko[] tekstit; 
         int tiedlkm = args.length;
@@ -30,13 +30,16 @@ public class Sanaindeksi {
         
         if(tiedlkm == 0){
             System.out.println("Kuinka monta tiedostoa annat?");
+            tiedlkm = lukija.nextInt();
             tiedlkm = 2;
             tiedostot = new String[] {"testi.txt", "testi2.txt"};
             //tiedostot = new String[tiedlkm];         
             System.out.println("Anna tiedostot ("+ tiedlkm +" kpl) välilyönnillä eroteltuna.");
             
-            for(int i= 0; i< args.length; i++){ 
-                lukija.lisaaTiedosto(new File(args[i]));
+            String vastaus = lukija.nextLine();
+            
+            if(vastaus.length() >0){
+                tiedostot = vastaus.split(" ");
             }
         }
         else{ tiedostot = args;
@@ -47,7 +50,7 @@ public class Sanaindeksi {
       
         Taulukko teksti;
         for(int i= 0; i< tiedlkm; i++){ 
-               teksti = lukija.lisaaTiedosto(new File(tiedostot[i]));
+               teksti = puulukija.lisaaTiedosto(new File(tiedostot[i]));
                tekstit[i] = teksti;
         }
        
@@ -68,9 +71,13 @@ public class Sanaindeksi {
         */
         System.out.println("..............................");
         System.out.println("Tekstitiedostot luettu.");
+        
         System.out.println("Anna etsittävä sana.");
-        Taulukko[] rivit = testipuu.etsi("rivin");
-       
+        
+        String sana = lukija.nextLine();
+        //sana = "rivit";
+        Taulukko[] rivit = testipuu.etsi(sana);
+        
         for(int k = 0; k<rivit.length; k++){     
             for(int i = 0; i<rivit[k].getKoko(); i++){ 
                 int rivinro = (Integer) rivit[k].get(i+1);
@@ -84,7 +91,7 @@ public class Sanaindeksi {
   
         
         
-        System.out.println(testipuu);
+        //System.out.println(testipuu);
         
         // TODO:
         //
