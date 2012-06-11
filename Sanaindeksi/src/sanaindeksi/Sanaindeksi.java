@@ -108,6 +108,7 @@ public class Sanaindeksi {
         // monen sanan haku
         // ääkköset
         // ensimmäisellä rivillä outo ylimääräinen merkki
+        // merkit pois puuhun menevistä sanoista
         
     }
     

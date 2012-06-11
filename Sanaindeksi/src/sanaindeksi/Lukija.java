@@ -54,7 +54,7 @@ public class Lukija {
             Rivit.lisaa(rivi);
             
             rivi = rivi.toLowerCase();
-            rivi = rivi.replace('"', ' ');
+            rivi = rivi.replace('"',' ');
             String[] sanat = rivi.split(" ");
             for(int i = 0; i< sanat.length; i++){
                 Puu.lisays(sanat[i], r, tiedostoja);
