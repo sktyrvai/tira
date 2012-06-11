@@ -14,13 +14,26 @@ public class Solmu {
     private Taulukko Lapset;
     private boolean sananLoppu = false;  
     private Taulukko[] rivitiedot;
+    private static int tiedlkm = -1;
+    // juurisolmulle oma Solmu(char merkki, int lkm)?
+    // 
     
-    
+public static void setTiedLkm(int uusiLuku)
+{
+tiedlkm=uusiLuku;
+}
+/*
+public static int getTiedLkm()
+{
+return tiedlkm;
+}
+  */  
     public Solmu(char merkki){
+        if(tiedlkm < 0)
+            throw new RuntimeException("Et ole asettanut tiedostojen määrää");
         this.merkki = merkki;
-        Lapset = new Taulukko();  
-        //this.rivit = "";
-        this.rivitiedot = new Taulukko[2];
+        Lapset = new Taulukko();
+        this.rivitiedot = new Taulukko[tiedlkm];
        for(int i = 0; i<rivitiedot.length; i++){
            this.rivitiedot[i] = new Taulukko();
         }

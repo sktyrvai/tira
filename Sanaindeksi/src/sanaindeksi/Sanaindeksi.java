@@ -21,8 +21,8 @@ public class Sanaindeksi {
     public static Scanner lukija = new Scanner(System.in);
     public static void main(String[] args) {
                     
-        Puu testipuu = new Puu();// puu saa tiedostojen lkm:n?
-        Lukija puulukija = new Lukija(testipuu);
+        Puu testipuu; // = new Puu();// puu saa tiedostojen lkm:n?
+        Lukija puulukija; // = new Lukija(testipuu);
         String[] tiedostot; 
         Taulukko[] tekstit; 
         int tiedlkm = args.length;
@@ -31,25 +31,33 @@ public class Sanaindeksi {
         if(tiedlkm == 0){
             System.out.println("Kuinka monta tiedostoa annat?");
             tiedlkm = lukija.nextInt();
-            tiedlkm = 2; // poista
-            tiedostot = new String[] {"testi.txt", "testi2.txt"};
-            //tiedostot = new String[tiedlkm];         
+            lukija.nextLine();
+            Solmu.setTiedLkm(tiedlkm);
+            tiedostot = new String[tiedlkm];         
             System.out.println("Anna tiedostot ("+ tiedlkm +" kpl) välilyönnillä eroteltuna.");
             
             String vastaus = lukija.nextLine();
             
             if(vastaus.length() >0){
                 tiedostot = vastaus.split(" ");
-            }
+            } //else{System.out.println("En antanut " +tiedlkm+ " tiedostonimeä.");
         }
+        
         else{ tiedostot = args;
             tiedlkm = tiedostot.length;         
         }
             
         tekstit = new Taulukko[tiedlkm];
         
+        testipuu = new Puu();// puu saa tiedostojen lkm:n?
+        puulukija = new Lukija(testipuu);
         //luo tässä puulukija ja puu?
         Taulukko teksti;
+        
+        for(int i= 0; i< tiedlkm; i++){ 
+               System.out.println(tiedostot[i]);
+        }
+        
         for(int i= 0; i< tiedlkm; i++){ 
                teksti = puulukija.lisaaTiedosto(new File(tiedostot[i]));
                tekstit[i] = teksti;
@@ -99,7 +107,8 @@ public class Sanaindeksi {
         // tee testejä       
         // Tekstin tulostus ja talletus oma olionsa?
         // monen sanan haku
-        // yleistä yli kolmelle tiedostolle
+        // yleistä yli kahdelle tiedostolle
+        // ääkköset
         
     }
     

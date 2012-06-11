@@ -11,7 +11,7 @@ public class Puu {
     
     
     public Puu(){
-        juuri = new Solmu(' ');        
+        juuri = new Solmu(' ');   //lisää tähän tiedlkm?     
     }
     
     /**
