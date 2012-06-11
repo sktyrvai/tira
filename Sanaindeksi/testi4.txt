@@ -1,0 +1,11 @@
+﻿äääää
+tämä on kolmas testitiedosto
+ensimmäinen testirivi
+toinen testi rivi
+kolmas testi rivi testirivi
+neljäs rivi testaa
+viides rivi testaa testiriviä
+rivi rivin rivit rivi
+rivin
+kahdeksas rivi
+mitä ihmettä
