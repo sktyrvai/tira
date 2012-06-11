@@ -4,12 +4,18 @@ package sanaindeksi;
 import java.lang.reflect.Array;
 
 /**
- *
+ * Dynaaminen taulukko, joka kaksinkertaistaa kokonsa, kun täynnä. Taulukon ensimmäinen paikka on tyhjä ts. indeksointi alkaa yhdestä. Säilyttää olioita.
  * @author sktyrvai
  */
 
 public class Taulukko {
+    /**
+     * Taulukon alkioiden lukumäärä.
+     */
     private int lkm;
+    /**
+     * Varsinainen taulukko.
+     */
     private Object[] taul;
 
    
@@ -35,8 +41,8 @@ public class Taulukko {
         taul[lkm] = uusi;                
     }
     
-    /*
-     * kopioi taulukon kaksikertaa isompaan taulukkoon
+    /**
+     * Kopioi taulukon kaksikertaa isompaan taulukkoon
      */
     private void kopioi(){
        Object[] uusi = new Object[2*taul.length];
@@ -67,11 +73,18 @@ public class Taulukko {
         return this.taul[i];
     }
     
-    
+    /**
+     * Palauttaa Taulukossa olevien alkioiden määrän.
+     * @return lkm
+     */
     public int getKoko(){
         return this.lkm;
     }
     
+    /**
+     * Palauttaa taulukon.
+     * @return Object[] 
+     */
     public Object[] getTaulukko(){
         return this.taul;
         //lyhennetäänkö?

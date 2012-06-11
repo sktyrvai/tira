@@ -1,6 +1,5 @@
 
 package sanaindeksi;
-import java.util.ArrayList;
 
 /**
  * Solmu, joka säilyttää merkkiä ja siihen päättyvän sanan rivitietoja. Säilyttää lapsiaan Taulukossa. 
@@ -10,10 +9,19 @@ import java.util.ArrayList;
   
 public class Solmu {
 
+    /**
+     * Solmussa säilytettävä merkki.
+     */
     private char merkki;
     private Taulukko Lapset;
-    private boolean sananLoppu = false;  
+    private boolean sananLoppu = false;
+    /**
+     * Taulukko, jossa jokaista tekstitiedostoa kohden dynaaminen taulukko riviesiintymisistä.
+     */
     private Taulukko[] rivitiedot;
+    /**
+     * Tekstitiedostojen lukumäärä
+     */     
     private static int tiedlkm;
      
     
@@ -113,8 +121,9 @@ public class Solmu {
 
         return apu;
     }
+    
     /**
-     * 
+     * Antaa tulosteena Solmun merkin ja listauksen riviesiintymisistä jokaisessa tiedostossa.
      * @return Solmussa olevan merkin ja sen rivitiedot tiedostottain 
      */
     

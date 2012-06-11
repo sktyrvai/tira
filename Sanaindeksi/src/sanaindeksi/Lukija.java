@@ -15,12 +15,21 @@ import java.util.logging.Logger;
  */
 public class Lukija {
 
-    private Puu puu;
-    public Taulukko Rivit;
+    /**
+     * Puu, johon Lukija lukee tekstitiedostot.
+     */
+    private Puu Puu;   
+    /**
+     * Luettujen tiedostojen lukumäärä -1.
+     */
     private int tiedostoja;
+    /**
+     * Aputaulukko, jota käytetään saatujen tekstitiedostojen rivittämiseen.
+     */
+    private Taulukko Rivit;
     
     public Lukija(Puu puu){
-        this.puu = puu;
+        this.Puu = puu;
         this.tiedostoja = 0;
         
     }
@@ -45,7 +54,7 @@ public class Lukija {
             Rivit.lisaa(rivi);
             String[] sanat = rivi.split(" ");
             for(int i = 0; i< sanat.length; i++){
-                puu.lisays(sanat[i], r, tiedostoja);
+                Puu.lisays(sanat[i], r, tiedostoja);
             }
             System.out.println(rivi);          
         }
