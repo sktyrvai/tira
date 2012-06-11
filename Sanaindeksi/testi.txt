@@ -1,3 +1,5 @@
+﻿äääää
+
 ensimmäinen testirivi
 toinen testi rivi
 kolmas testi rivi testirivi
@@ -6,3 +8,4 @@ viides rivi testaa testiriviä
 rivi rivin rivit rivi
 rivin
 kahdeksas rivi
+mitä ihmettä

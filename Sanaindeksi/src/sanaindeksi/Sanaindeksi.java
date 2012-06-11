@@ -21,37 +21,44 @@ public class Sanaindeksi {
     public static Scanner lukija = new Scanner(System.in);
     public static void main(String[] args) {
                     
-        Puu testipuu; // = new Puu();// puu saa tiedostojen lkm:n?
-        Lukija puulukija; // = new Lukija(testipuu);
-        String[] tiedostot; 
+        Puu testipuu;
+        Lukija puulukija;
+        String[] tiedostot = new String[1]; 
         Taulukko[] tekstit; 
         int tiedlkm = args.length;
-        
+ 
         
         if(tiedlkm == 0){
-            System.out.println("Kuinka monta tiedostoa annat?");
-            tiedlkm = lukija.nextInt();
-            lukija.nextLine();
-            Solmu.setTiedLkm(tiedlkm);
-            tiedostot = new String[tiedlkm];         
-            System.out.println("Anna tiedostot ("+ tiedlkm +" kpl) välilyönnillä eroteltuna.");
+            boolean looppi = true;
+            while(looppi){
+                System.out.println("Kuinka monta tiedostoa annat?");
+                tiedlkm = lukija.nextInt();
+                lukija.nextLine();
             
-            String vastaus = lukija.nextLine();
+                Solmu.setTiedLkm(tiedlkm);            
+                tiedostot = new String[tiedlkm];         
             
-            if(vastaus.length() >0){
-                tiedostot = vastaus.split(" ");
-            } //else{System.out.println("En antanut " +tiedlkm+ " tiedostonimeä.");
-        }
-        
-        else{ tiedostot = args;
+                System.out.println("Anna tiedostot ("+ tiedlkm +" kpl) välilyönnillä eroteltuna.");
+            
+                String vastaus = lukija.nextLine();
+            
+                if(vastaus.length() >0){
+                    tiedostot = vastaus.split(" ");
+                    if(tiedostot.length == tiedlkm){
+                      looppi = false;  
+                    }
+                }
+                System.out.println("Antamiesi tiedostojen lukumäärä ei vastannut antamaasi lukua " +tiedlkm +".");
+
+            }
+        }   else{ tiedostot = args;
             tiedlkm = tiedostot.length;         
         }
             
         tekstit = new Taulukko[tiedlkm];
         
-        testipuu = new Puu();// puu saa tiedostojen lkm:n?
+        testipuu = new Puu();
         puulukija = new Lukija(testipuu);
-        //luo tässä puulukija ja puu?
         Taulukko teksti;
         
         for(int i= 0; i< tiedlkm; i++){ 
@@ -63,37 +70,27 @@ public class Sanaindeksi {
                tekstit[i] = teksti;
         }
        
-        
-        /*
-        File tied;
-        //for(int i = 0; i<; i++){
-        tied = new File("testi.txt");       
-        tiedostot[0] = tied.getName();
-        teksti = lukija.lisaaTiedosto(tied);
-        tekstit[0] = teksti;
-        tied = new File("testi2.txt");
-        tiedostot[1] = tied.getName();
-        teksti = lukija.lisaaTiedosto(tied);
-        tekstit[1] = teksti;
-        
-        * 
-        */
         System.out.println("..............................");
         System.out.println("Tekstitiedostot luettu.");
         
-        System.out.println("Anna etsittävä sana.");
-        
+       
+        System.out.println("Anna etsittävä sana.");      
         String sana = lukija.nextLine();
-        //sana = "rivit";
-        Taulukko[] rivit = testipuu.etsi(sana);
         
-        for(int k = 0; k<rivit.length; k++){     
-            for(int i = 0; i<rivit[k].getKoko(); i++){ 
-                int rivinro = (Integer) rivit[k].get(i+1);
-                System.out.println(tiedostot[k] + " "+rivinro +" "+ tekstit[k].get(rivinro));                             
+        while(!sana.equals("")){
+            
+            Taulukko[] rivit = testipuu.etsi(sana);
+        
+            for(int k = 0; k<rivit.length; k++){     
+                for(int i = 0; i<rivit[k].getKoko(); i++){ 
+                    int rivinro = (Integer) rivit[k].get(i+1);
+                    System.out.println(tiedostot[k] + " "+rivinro +" "+ tekstit[k].get(rivinro));                             
+                }                
             }
+            
             System.out.println();
-                
+            System.out.println("Anna seuraava etsittävä sana. Anna tyhjä, jos tahdot lopettaa.");
+            sana = lukija.nextLine();
         }
         
         
@@ -101,13 +98,12 @@ public class Sanaindeksi {
         
         
         //System.out.println(testipuu);
+        // hyväksyy muuten vain utf-8-tekstitedostoja
         
         // TODO:
         //
         // tee testejä       
-        // Tekstin tulostus ja talletus oma olionsa?
         // monen sanan haku
-        // yleistä yli kahdelle tiedostolle
         // ääkköset
         
     }
