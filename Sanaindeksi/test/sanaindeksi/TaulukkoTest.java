@@ -1,3 +1,5 @@
+package sanaindeksi;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -5,7 +7,7 @@
 
 import org.junit.*;
 import static org.junit.Assert.*;
-import sanaindeksi.Taulukko;
+
 
 /**
  *
@@ -16,6 +18,7 @@ public class TaulukkoTest {
     public Taulukko taulukko;
     
     public TaulukkoTest() {
+        Solmu.setTiedLkm(1);
     }
 
     @BeforeClass

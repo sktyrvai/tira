@@ -46,9 +46,11 @@ public class Sanaindeksi {
                     tiedostot = vastaus.split(" ");
                     if(tiedostot.length == tiedlkm){
                       looppi = false;  
+                    } else{
+                        System.out.println("Antamiesi tiedostojen lukumäärä ei vastannut antamaasi lukua " +tiedlkm +".");
                     }
                 }
-                System.out.println("Antamiesi tiedostojen lukumäärä ei vastannut antamaasi lukua " +tiedlkm +".");
+                
 
             }
         }   else{ tiedostot = args;
@@ -105,6 +107,7 @@ public class Sanaindeksi {
         // tee testejä       
         // monen sanan haku
         // ääkköset
+        // ensimmäisellä rivillä outo ylimääräinen merkki
         
     }
     

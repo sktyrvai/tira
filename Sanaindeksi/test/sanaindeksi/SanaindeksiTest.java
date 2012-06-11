@@ -1,3 +1,5 @@
+package sanaindeksi;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -13,6 +15,7 @@ import static org.junit.Assert.*;
 public class SanaindeksiTest {
     
     public SanaindeksiTest() {
+        Solmu.setTiedLkm(1);
     }
 
     @BeforeClass
