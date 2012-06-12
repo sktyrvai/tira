@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Lukee tiedostoja ja lisää puuhun tekstiä sanakerrallaan.
  * @author Sanna
  * @version 280512
  */
@@ -42,7 +42,7 @@ public class Lukija {
         Rivit = new Taulukko();
         Scanner lukija = null;
         try {
-            lukija = new Scanner(tiedosto);
+            lukija = new Scanner(tiedosto, "utf-8");
         } catch (FileNotFoundException ex) {
             System.out.println(tiedosto + " ei löytynyt");
         }

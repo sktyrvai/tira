@@ -18,7 +18,7 @@ public class Sanaindeksi {
     /**
      * @param args käytettävät tekstitiedostot .txt
      */
-    public static Scanner lukija = new Scanner(System.in);
+    public static Scanner lukija = new Scanner(System.in, "utf-8");
     public static void main(String[] args) {
                     
         Puu testipuu;
@@ -82,12 +82,13 @@ public class Sanaindeksi {
         while(!sana.equals("")){
             
             Taulukko[] rivit = testipuu.etsi(sana);
-        
-            for(int k = 0; k<rivit.length; k++){     
-                for(int i = 0; i<rivit[k].getKoko(); i++){ 
-                    int rivinro = (Integer) rivit[k].get(i+1);
-                    System.out.println(tiedostot[k] + " "+rivinro +" "+ tekstit[k].get(rivinro));                             
-                }                
+            if(rivit != null){        
+                for(int k = 0; k<rivit.length; k++){     
+                    for(int i = 0; i<rivit[k].getKoko(); i++){ 
+                        int rivinro = (Integer) rivit[k].get(i+1);
+                        System.out.println(tiedostot[k] + " "+rivinro +" "+ tekstit[k].get(rivinro));                             
+                    }                
+                }
             }
             
             System.out.println();
@@ -106,9 +107,9 @@ public class Sanaindeksi {
         //
         // tee testejä       
         // monen sanan haku
-        // ääkköset
         // ensimmäisellä rivillä outo ylimääräinen merkki
-        // merkit pois puuhun menevistä sanoista
+        // merkit pois puuhun menevistä sanoista:
+        // http://mooc.cs.helsinki.fi/content/materiaali-5#e165
         
     }
     
