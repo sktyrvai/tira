@@ -61,10 +61,6 @@ public class Sanaindeksi {
         Taulukko teksti;
         
         for(int i= 0; i< tiedlkm; i++){ 
-               System.out.println(tiedostot[i]);
-        }
-        
-        for(int i= 0; i< tiedlkm; i++){ 
                teksti = puulukija.lisaaTiedosto(new File(tiedostot[i]));
                tekstit[i] = teksti;
         }
@@ -95,9 +91,7 @@ public class Sanaindeksi {
         }
         
         
-  
-        
-        
+         
         //System.out.println(testipuu);
         // hyväksyy muuten vain utf-8-tekstitedostoja
         
