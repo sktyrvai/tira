@@ -7,6 +7,9 @@ package sanaindeksi;
  * @version
  */
 public class Puu {
+    /**
+     * Puun juurisolmu.
+     */
     private Solmu juuri;
     
     
@@ -62,26 +65,45 @@ public class Puu {
     }
     
     /**
-     * etsitään sana puusta ja palautetaan sanan viimeisen kirjaimen solmun rivitiedot
+     * Etsii sanan puusta ja palautetaan sanan viimeisen kirjaimen solmun rivitiedot.
      * @param sana käyttäjän hakema sana
      * @return String[] jos sana löytyi palauta viimeisen solmun rivitiedot
      */    
-    public Taulukko[] etsi(String sana){
+    public Taulukko[] etsiSana(String sana){
         System.out.println();
         System.out.println("Etsitään sanaa " +sana);
         Solmu nyt = this.juuri;
         for(int i = 0; i<sana.length(); i++){
             Solmu seur = nyt.lapsisolmu(sana.charAt(i));
             if(seur == null){
-             System.out.println("Ei löytynyt: " + sana + " :(");
                 return null;
             } else nyt = seur;
         }
         return nyt.getRivit();
     }
+    
+    /**
+     * Etsii puusta useamman sanan, vertailee näiden rivitietoja ja palauttaa tiedon riveistä, joissa kaikki esiintyvät.
+     * @param sanat
+     * @return 
+     */
+    public Taulukko[] etsi(String hakusanat){
+        String[] sanat = hakusanat.split(" ");
+        Taulukko[] taul = etsiSana(sanat[0]);
+        for(int i =1; i< sanat.length;i++){
+            etsiSana(sanat[i]);
+        }
+        return taul; 
+       
+        // vertaile saatuja taulukoita
+        // uusi Taulukko? tarkista hakemalla sanaparia ja sitten vain toista...
+    }
    
 
-    
+    /**
+     * Palauttaa puun juuren.
+     * @return puun juuren 
+     */
     public Solmu getJuuri(){
         return this.juuri;
     }

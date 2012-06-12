@@ -65,7 +65,7 @@ public class Taulukko {
     }
     /**
      * Palauttaa pyydetyn alkion. HUOM! Taulukon ensimmäinen paikka on tyhjä. 
-     * @param int i
+     * @param i
      * @return Object sanat[i]. i. alkio 
      */
     

@@ -52,7 +52,7 @@ public class Lukija {
             r++;
             String rivi = lukija.nextLine();
             Rivit.lisaa(rivi);
-            
+            // metodi joka siistii sanat
             rivi = rivi.toLowerCase();
             rivi = rivi.replace('"',' ');
             String[] sanat = rivi.split(" ");

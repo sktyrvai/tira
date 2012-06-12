@@ -15,9 +15,6 @@ import java.util.Scanner;
  */
 public class Sanaindeksi {
 
-    /**
-     * @param args käytettävät tekstitiedostot .txt
-     */
     public static Scanner lukija = new Scanner(System.in, "utf-8");
     public static void main(String[] args) {
                     
@@ -89,6 +86,7 @@ public class Sanaindeksi {
                         System.out.println(tiedostot[k] + " "+rivinro +" "+ tekstit[k].get(rivinro));                             
                     }                
                 }
+            } else {System.out.println("Sanaa " +sana + " ei löytynyt :(");
             }
             
             System.out.println();

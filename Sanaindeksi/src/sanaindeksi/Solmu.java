@@ -40,14 +40,26 @@ public class Solmu {
         }
     }
     
+    /**
+     * Asettaa Solmulle uuden merkin. 
+     * @param merkki 
+     */
     public void setMerkki(char merkki){
         this.merkki = merkki;        
     }
     
+    /**
+     * palauttaa solmun säilyttämän merkin.
+     * @return merkki 
+     */
     public char getMerkki(){
         return this.merkki;
     }
     
+    /**
+     * Asettaa tähän solmuun sanan lopun.
+     * @param arvo 
+     */
     public void setSananLoppu(boolean arvo){
         this.sananLoppu = arvo;
     }
@@ -101,14 +113,26 @@ public class Solmu {
         return s;
     }
     
+    /**
+     * Palauttaa solmun riviesiintymistiedot.
+     * @return rivitiedot
+     */
     public Taulukko[] getRivit(){
         return this.rivitiedot;
     }
     
+    /**
+     * Palauttaa tiedon päättyykö tässä sana.
+     * @return sananLoppu
+     */
     public boolean getSananLoppu(){
         return this.sananLoppu;   
     }
            
+    /**
+     * Muotoilee solmun rivitiedot tulostettavaan muotoon.
+     * @return apu
+     */
     private String tulostuksenApu(){
         String apu = "Rivitiedosto: ";
         for(int i = 0; i<rivitiedot.length; i++){
