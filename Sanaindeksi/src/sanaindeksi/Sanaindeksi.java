@@ -15,7 +15,8 @@ import java.util.Scanner;
  */
 public class Sanaindeksi {
 
-    public static Scanner lukija = new Scanner(System.in, "utf-8");
+    public static Scanner lukija = new Scanner(System.in, "UTF-8");
+    //public static Scanner lukija = new Scanner(new InputStreamReader(System.in, "UTF-8"));
     public static void main(String[] args) {
                     
         Puu testipuu;

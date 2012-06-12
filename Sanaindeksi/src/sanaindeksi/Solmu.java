@@ -30,8 +30,8 @@ public class Solmu {
     }
   
     public Solmu(char merkki){
-        //if(tiedlkm < 0)
-          //  throw new RuntimeException("Et ole asettanut tiedostojen määrää");
+        if(tiedlkm < 0)
+            throw new RuntimeException("Et ole asettanut tiedostojen määrää");
         this.merkki = merkki;
         Lapset = new Taulukko();
         this.rivitiedot = new Taulukko[tiedlkm];

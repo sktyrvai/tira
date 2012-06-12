@@ -85,15 +85,42 @@ public class Puu {
     /**
      * Etsii puusta useamman sanan, vertailee näiden rivitietoja ja palauttaa tiedon riveistä, joissa kaikki esiintyvät.
      * @param sanat
-     * @return 
+     * @return uusi
      */
     public Taulukko[] etsi(String hakusanat){
         String[] sanat = hakusanat.split(" ");
-        Taulukko[] taul = etsiSana(sanat[0]);
-        for(int i =1; i< sanat.length;i++){
-            etsiSana(sanat[i]);
+        Taulukko[] taul1 = etsiSana(sanat[0]);
+        Taulukko[] uusi = taul1;
+        
+        if(taul1 == null){
+            return null;
         }
-        return taul; 
+        
+        for(int i =1; i< sanat.length;i++){
+            Taulukko[] taul2 = etsiSana(sanat[i]);
+            if(taul2 == null){
+                return null;
+            }
+            uusi = new Taulukko[taul2.length];
+            for(int k = 0; k<uusi.length; k++){
+                uusi[k] = new Taulukko();
+            }
+            for(int j = 0; j<taul2.length; j++){
+                int a = 1;
+                int b = 1;               
+                while(a <= taul1[j].getKoko() && b <= taul2[j].getKoko()){
+                    if( (Integer) taul1[j].get(a) == (Integer) taul2[j].get(b)){
+                        uusi[j].lisaa(taul1[j].get(a));
+                        a++;
+                        b++;
+                    }else if((Integer) taul1[j].get(a) > (Integer) taul2[j].get(b)){
+                        b++;
+                    }else a++;
+                }                
+            }
+            taul1 = taul2;
+        }
+        return uusi; 
        
         // vertaile saatuja taulukoita
         // uusi Taulukko? tarkista hakemalla sanaparia ja sitten vain toista...
