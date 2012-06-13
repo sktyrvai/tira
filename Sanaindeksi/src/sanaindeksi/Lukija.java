@@ -68,6 +68,7 @@ public class Lukija {
     
     private String siistiSana(String sana){
         sana = sana.toLowerCase();
+        if(sana.matches("a|b|c|d|e|f|g|h"));
         
         return sana;
     }
