@@ -56,22 +56,23 @@ public class Lukija {
             rivi = rivi.replace('"',' ');
             String[] sanat = rivi.split(" ");
             for(int i = 0; i< sanat.length; i++){
-                
-                Puu.lisays(sanat[i], r, tiedostoja);
+                String s = siistiSana(sanat[i]);
+                Puu.lisays(s, r, tiedostoja);
             }
             System.out.println(rivi);          
         }
-        System.out.println("tekstin sisältävän dynaamisen taulukon koko " +Rivit.getKoko());
+        System.out.println("tekstin sisältävän dynaamisen taulukon koko " +Rivit.getKoko()); //poista tämä
         tiedostoja ++;
         return Rivit;
     }
+    
     
     private String siistiSana(String sana){
         sana = sana.toLowerCase();
         int i = 0;
         while( i<sana.length()){
             String alisana = sana.substring(i,i);
-            if(alisana.matches("a|b|c|d|e|f|g|h")){
+            if(!alisana.matches("a|b|c|d|e|f|g|h")){
                 i++;
             }
             else return sana.substring(i);
