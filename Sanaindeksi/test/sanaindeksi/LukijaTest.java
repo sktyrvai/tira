@@ -19,6 +19,7 @@ public class LukijaTest {
 
     @BeforeClass
     public static void setUpClass() throws Exception {
+        Puu koivu = new Puu();
     }
 
     @AfterClass
@@ -32,6 +33,12 @@ public class LukijaTest {
     @After
     public void tearDown() {
     }
+    
+    @Test
+    public void jotain(){
+        
+    }
+            
     // testaa tyhjän tiedoston lukua
     // testaa välimerkkeihin suhtautuminen!
     // lue tiedosto ja etsi kaikki tiedoston sanat puusta

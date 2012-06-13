@@ -56,6 +56,7 @@ public class Lukija {
             rivi = rivi.replace('"',' ');
             String[] sanat = rivi.split(" ");
             for(int i = 0; i< sanat.length; i++){
+                
                 Puu.lisays(sanat[i], r, tiedostoja);
             }
             System.out.println(rivi);          
@@ -63,6 +64,12 @@ public class Lukija {
         System.out.println("tekstin sisältävän dynaamisen taulukon koko " +Rivit.getKoko());
         tiedostoja ++;
         return Rivit;
+    }
+    
+    private String siistiSana(String sana){
+        sana = sana.toLowerCase();
+        
+        return sana;
     }
     
 }
