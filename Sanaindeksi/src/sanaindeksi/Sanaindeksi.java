@@ -78,8 +78,8 @@ public class Sanaindeksi {
             Taulukko[] rivit = testipuu.etsi(sana);
             if(rivit != null){        
                 for(int k = 0; k<rivit.length; k++){     
-                    for(int i = 0; i<rivit[k].getKoko(); i++){ 
-                        int rivinro = (Integer) rivit[k].get(i+1);
+                    for(int i = 1; i<= rivit[k].getKoko(); i++){ 
+                        int rivinro = (Integer) rivit[k].get(i);
                         System.out.println(tiedostot[k] + " "+rivinro +" "+ tekstit[k].get(rivinro));                             
                     }                
                 }
@@ -93,14 +93,14 @@ public class Sanaindeksi {
         
         
          
-        //System.out.println(testipuu);
+        System.out.println(testipuu);
         // hyväksyy muuten vain utf-8-tekstitedostoja
         
         // TODO:
         //
         // tee testejä       
         // ensimmäisellä rivillä outo ylimääräinen merkki
-        // merkit pois puuhun menevistä sanoista:
+        // 
         // http://mooc.cs.helsinki.fi/content/materiaali-5#e165
         
     }

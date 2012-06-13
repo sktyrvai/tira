@@ -56,7 +56,7 @@ public class Lukija {
             //rivi = rivi.replace('"',' ');
             String[] sanat = rivi.split(" ");
             for(int i = 0; i< sanat.length; i++){
-                String s = this.siistiSana2(sanat[i]);  
+                String s = this.siistiSana(sanat[i]);  
                 Puu.lisays(s, r, tiedostoja);
             }
             System.out.println(rivi);          
@@ -66,13 +66,13 @@ public class Lukija {
         return Rivit;
     }
     
-    private String siistiSana(String sana){
-        sana = sana.toLowerCase();
-        
-        return sana;
-    }
+   /**
+    * Poistaa saadusta Stringistä välimerkit, välit, numerot ynnä muut epäkirjaimet.
+    * @param sana
+    * @return s 
+    */
     
-    private String siistiSana2(String sana){
+    private String siistiSana(String sana){
         String s = "";
         sana = sana.toLowerCase();
         for(int i = 0; i<sana.length(); i++){

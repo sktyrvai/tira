@@ -136,7 +136,7 @@ public class Solmu {
     private String tulostuksenApu(){
         String apu = "Rivitiedosto: ";
         for(int i = 0; i<rivitiedot.length; i++){
-            apu = apu + i+":  ";
+            apu = apu + i+": ";
             for(int k = 1; k <= rivitiedot[i].getKoko(); k++){
                 apu = apu + " "+rivitiedot[i].get(k);
             }

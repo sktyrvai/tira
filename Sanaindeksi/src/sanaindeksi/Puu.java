@@ -79,6 +79,7 @@ public class Puu {
                 return null;
             } else nyt = seur;
         }
+        System.out.println("Löytyi vika solmu: "+ nyt);
         return nyt.getRivit();
     }
     
@@ -90,6 +91,7 @@ public class Puu {
     public Taulukko[] etsi(String hakusanat){
         String[] sanat = hakusanat.split(" ");
         Taulukko[] taul1 = etsiSana(sanat[0]);
+        
         Taulukko[] uusi = taul1;
         
         if(taul1 == null){
@@ -101,7 +103,7 @@ public class Puu {
             if(taul2 == null){
                 return null;
             }
-            uusi = new Taulukko[taul2.length];
+            uusi = new Taulukko[taul2.length];           
             for(int k = 0; k<uusi.length; k++){
                 uusi[k] = new Taulukko();
             }
@@ -121,9 +123,6 @@ public class Puu {
             taul1 = taul2;
         }
         return uusi; 
-       
-        // vertaile saatuja taulukoita
-        // uusi Taulukko? tarkista hakemalla sanaparia ja sitten vain toista...
     }
    
 
