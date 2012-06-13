@@ -74,7 +74,6 @@ public class Sanaindeksi {
         String sana = lukija.nextLine();
         
         while(!sana.equals("")){
-            System.out.println("Etsit sanaa " +sana);
             Taulukko[] rivit = testipuu.etsi(sana);
             if(rivit != null){        
                 for(int k = 0; k<rivit.length; k++){     
@@ -85,7 +84,7 @@ public class Sanaindeksi {
                 }
             } else {System.out.println("Sanaa tai sanoja " +sana + " ei löytynyt :(");
             }
-            
+            //löytyi kpl hakusanalla +sana
             System.out.println();
             System.out.println("Anna seuraava etsittävä sana. Anna tyhjä, jos tahdot lopettaa.");
             sana = lukija.nextLine();
@@ -93,15 +92,15 @@ public class Sanaindeksi {
         
         
          
-        System.out.println(testipuu);
+        //System.out.println(testipuu);
         // hyväksyy muuten vain utf-8-tekstitedostoja
         
         // TODO:
         //
         // tee testejä       
-        // ensimmäisellä rivillä outo ylimääräinen merkki
-        // 
-        // http://mooc.cs.helsinki.fi/content/materiaali-5#e165
+       
+        // yli kahden sanan haku
+        
         
     }
     
