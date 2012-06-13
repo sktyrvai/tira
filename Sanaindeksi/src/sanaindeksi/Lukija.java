@@ -52,12 +52,12 @@ public class Lukija {
             r++;
             String rivi = lukija.nextLine();
             Rivit.lisaa(rivi);
-            rivi = rivi.toLowerCase();
-            rivi = rivi.replace('"',' ');
+            //rivi = rivi.toLowerCase();
+            //rivi = rivi.replace('"',' ');
             String[] sanat = rivi.split(" ");
             for(int i = 0; i< sanat.length; i++){
-                
-                Puu.lisays(sanat[i], r, tiedostoja);
+                String s = this.siistiSana2(sanat[i]);  
+                Puu.lisays(s, r, tiedostoja);
             }
             System.out.println(rivi);          
         }
@@ -70,6 +70,19 @@ public class Lukija {
         sana = sana.toLowerCase();
         
         return sana;
+    }
+    
+    private String siistiSana2(String sana){
+        String s = "";
+        sana = sana.toLowerCase();
+        for(int i = 0; i<sana.length(); i++){
+            char c = sana.charAt(i);
+            if(Character.isLetter(c)){
+                s = s+ Character.toString(c); 
+            }                   
+        }
+        
+        return s;
     }
     
 }

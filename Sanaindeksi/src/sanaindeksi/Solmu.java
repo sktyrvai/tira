@@ -103,7 +103,7 @@ public class Solmu {
     
     /**
      * Palauttaa taulukon, jossa vain solmun lapset 
-     * @return taulukon s. s.size == Lapset.getKoko  
+     * @return s. s.size == Lapset.getKoko  
      */
     public Solmu[] getLapset(){
         Solmu[] s = new Solmu[Lapset.getKoko()];

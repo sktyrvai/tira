@@ -70,11 +70,11 @@ public class Sanaindeksi {
         System.out.println("Tekstitiedostot luettu.");
         
        
-        System.out.println("Anna etsittävä sana.");      
+        System.out.println("Anna etsittävä sana tai sanat.");      
         String sana = lukija.nextLine();
         
         while(!sana.equals("")){
-            
+            System.out.println("Etsit sanaa " +sana);
             Taulukko[] rivit = testipuu.etsi(sana);
             if(rivit != null){        
                 for(int k = 0; k<rivit.length; k++){     
@@ -83,7 +83,7 @@ public class Sanaindeksi {
                         System.out.println(tiedostot[k] + " "+rivinro +" "+ tekstit[k].get(rivinro));                             
                     }                
                 }
-            } else {System.out.println("Sanaa " +sana + " ei löytynyt :(");
+            } else {System.out.println("Sanaa tai sanoja " +sana + " ei löytynyt :(");
             }
             
             System.out.println();
@@ -99,7 +99,6 @@ public class Sanaindeksi {
         // TODO:
         //
         // tee testejä       
-        // monen sanan haku
         // ensimmäisellä rivillä outo ylimääräinen merkki
         // merkit pois puuhun menevistä sanoista:
         // http://mooc.cs.helsinki.fi/content/materiaali-5#e165
