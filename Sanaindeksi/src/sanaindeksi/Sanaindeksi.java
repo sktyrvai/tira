@@ -99,7 +99,7 @@ public class Sanaindeksi {
         // TODO:
         //
         // tee testejä       
-        // monen sanan haku
+
         // ensimmäisellä rivillä outo ylimääräinen merkki
         // merkit pois puuhun menevistä sanoista:
         // http://mooc.cs.helsinki.fi/content/materiaali-5#e165
