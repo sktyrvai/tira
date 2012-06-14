@@ -1,0 +1,6 @@
+
+
+Parannusehdotuksia:
+tiedostojen lisäys kesken ohjelman ajon, esim. asettamalla teksitiedostojen säilytys ja solmujen rivitiedot dynaamisiksi taulukoiksi. taulukot olisivat tällöin noin kaksikertaa suurempia, mutta tilavaativuudet eivät kaksinkertaistuisi, koska tulukon säilyttämien taulukoiden määrä ei kasvaisi.
+solmun lapset järjestettyyn taulukkoon, jolloin haku O(n) -> O(log n).
+ 

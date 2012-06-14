@@ -10,7 +10,7 @@ http://www.cs.helsinki.fi/u/ejunttil/opetus/tiraharjoitus/treeprint.txt
 
  
 Mitä on testattu, miten tämä tehtiin
- Minkälaisilla syötteillä testaus tehtiin (vertailupainotteisissa töissä tärkätä)
+
 Miten testit voidaan toistaa
 
 
@@ -19,3 +19,6 @@ Yksikkötestejä on käytetty luokkien yksinkertaisten ominaisuuksien testaamiseen.
 
 Solmu-luokkaa on testattu vain kirjaimille. Periaatteessa normaalit välimerkit (. , ! ?) sanojen lopussa pitäisi toimia, mutta esimerkiksi lainausmerkit tekevät aloittavan lainausmerkin jälkeen olevasta sanasta uuden.
 (Esim. sanaa koira hakiessa "koira hakkui"-riviä ei löytyisi.) Ongelman välttämiseksi puuhun lisäysvaiheessa pitäisi lainausmerkit yms. poistaa.
+
+
+testaa isoja tiedostoja, useita isoja tiedostoja, yhtä isoa jne.
