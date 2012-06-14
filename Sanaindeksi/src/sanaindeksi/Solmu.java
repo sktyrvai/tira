@@ -103,7 +103,7 @@ public class Solmu {
     
     /**
      * Palauttaa taulukon, jossa vain solmun lapset 
-     * @return taulukon s. s.size == Lapset.getKoko  
+     * @return s. s.size == Lapset.getKoko  
      */
     public Solmu[] getLapset(){
         Solmu[] s = new Solmu[Lapset.getKoko()];
@@ -136,7 +136,7 @@ public class Solmu {
     private String tulostuksenApu(){
         String apu = "Rivitiedosto: ";
         for(int i = 0; i<rivitiedot.length; i++){
-            apu = apu + i+":  ";
+            apu = apu + i+": ";
             for(int k = 1; k <= rivitiedot[i].getKoko(); k++){
                 apu = apu + " "+rivitiedot[i].get(k);
             }

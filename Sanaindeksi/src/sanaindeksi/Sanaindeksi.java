@@ -70,22 +70,21 @@ public class Sanaindeksi {
         System.out.println("Tekstitiedostot luettu.");
         
        
-        System.out.println("Anna etsittävä sana.");      
+        System.out.println("Anna etsittävä sana tai sanat.");      
         String sana = lukija.nextLine();
         
         while(!sana.equals("")){
-            
             Taulukko[] rivit = testipuu.etsi(sana);
             if(rivit != null){        
                 for(int k = 0; k<rivit.length; k++){     
-                    for(int i = 0; i<rivit[k].getKoko(); i++){ 
-                        int rivinro = (Integer) rivit[k].get(i+1);
+                    for(int i = 1; i<= rivit[k].getKoko(); i++){ 
+                        int rivinro = (Integer) rivit[k].get(i);
                         System.out.println(tiedostot[k] + " "+rivinro +" "+ tekstit[k].get(rivinro));                             
                     }                
                 }
-            } else {System.out.println("Sanaa " +sana + " ei löytynyt :(");
+            } else {System.out.println("Sanaa tai sanoja " +sana + " ei löytynyt :(");
             }
-            
+            //löytyi kpl hakusanalla +sana
             System.out.println();
             System.out.println("Anna seuraava etsittävä sana. Anna tyhjä, jos tahdot lopettaa.");
             sana = lukija.nextLine();

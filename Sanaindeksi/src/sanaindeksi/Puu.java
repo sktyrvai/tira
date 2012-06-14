@@ -70,8 +70,8 @@ public class Puu {
      * @return String[] jos sana löytyi palauta viimeisen solmun rivitiedot
      */    
     public Taulukko[] etsiSana(String sana){
-        System.out.println();
-        System.out.println("Etsitään sanaa " +sana);
+        //System.out.println();
+        //System.out.println("Etsitään sanaa " +sana);
         Solmu nyt = this.juuri;
         for(int i = 0; i<sana.length(); i++){
             Solmu seur = nyt.lapsisolmu(sana.charAt(i));
@@ -79,6 +79,7 @@ public class Puu {
                 return null;
             } else nyt = seur;
         }
+        //System.out.println("Löytyi vika solmu: "+ nyt);
         return nyt.getRivit();
     }
     
@@ -90,6 +91,7 @@ public class Puu {
     public Taulukko[] etsi(String hakusanat){
         String[] sanat = hakusanat.split(" ");
         Taulukko[] taul1 = etsiSana(sanat[0]);
+        
         Taulukko[] uusi = taul1;
         
         if(taul1 == null){
@@ -101,7 +103,7 @@ public class Puu {
             if(taul2 == null){
                 return null;
             }
-            uusi = new Taulukko[taul2.length];
+            uusi = new Taulukko[taul2.length];           
             for(int k = 0; k<uusi.length; k++){
                 uusi[k] = new Taulukko();
             }
@@ -109,21 +111,21 @@ public class Puu {
                 int a = 1;
                 int b = 1;               
                 while(a <= taul1[j].getKoko() && b <= taul2[j].getKoko()){
-                    if( (Integer) taul1[j].get(a) == (Integer) taul2[j].get(b)){
-                        uusi[j].lisaa(taul1[j].get(a));
+                    if(0 == ((Integer) taul1[j].get(a)).compareTo((Integer) taul2[j].get(b))){
+                        uusi[j].lisaa(taul2[j].get(b));
                         a++;
                         b++;
-                    }else if((Integer) taul1[j].get(a) > (Integer) taul2[j].get(b)){
+                    }else 
+                        if((Integer) taul1[j].get(a) > (Integer) taul2[j].get(b)){
                         b++;
-                    }else a++;
+                    }else if((Integer) taul1[j].get(a) < (Integer) taul2[j].get(b)){ 
+                        a++;
+                    }
                 }                
             }
             taul1 = taul2;
         }
         return uusi; 
-       
-        // vertaile saatuja taulukoita
-        // uusi Taulukko? tarkista hakemalla sanaparia ja sitten vain toista...
     }
    
 
