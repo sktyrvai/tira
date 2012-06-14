@@ -74,14 +74,18 @@ public class Sanaindeksi {
         String sana = lukija.nextLine();
         
         while(!sana.equals("")){
-            Taulukko[] rivit = testipuu.etsi(sana);
+            Taulukko[] rivit = testipuu.etsi(sana.toLowerCase());
+            int loydetyt = 0;
             if(rivit != null){        
                 for(int k = 0; k<rivit.length; k++){     
                     for(int i = 1; i<= rivit[k].getKoko(); i++){ 
                         int rivinro = (Integer) rivit[k].get(i);
+                        loydetyt++;
                         System.out.println(tiedostot[k] + " "+rivinro +" "+ tekstit[k].get(rivinro));                             
                     }                
                 }
+                System.out.println();
+                System.out.println("Hakusanalla "+sana+ " löytyi " +loydetyt + " riviä.");
             } else {System.out.println("Sanaa tai sanoja " +sana + " ei löytynyt :(");
             }
             //löytyi kpl hakusanalla+ sana

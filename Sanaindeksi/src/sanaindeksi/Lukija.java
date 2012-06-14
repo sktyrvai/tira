@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Lukee tiedostoja ja lisää puuhun tekstiä sanakerrallaan.
+ * Lukee tiedostoja ja lisää puuhun tekstiä sanakerrallaan. Siistii lisättävistä sanoista erikoismerkit, numerot yms pois.
  * @author Sanna
  * @version 280512
  */
@@ -59,7 +59,7 @@ public class Lukija {
                 String s = this.siistiSana(sanat[i]);  
                 Puu.lisays(s, r, tiedostoja);
             }
-            System.out.println(rivi);          
+            //System.out.println(rivi);          
         }
         System.out.println("tekstin sisältävän dynaamisen taulukon koko " +Rivit.getKoko());
         tiedostoja ++;
