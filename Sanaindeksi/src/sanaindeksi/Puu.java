@@ -79,7 +79,7 @@ public class Puu {
                 return null;
             } else nyt = seur;
         }
-        //System.out.println("Löytyi vika solmu: "+ nyt);
+        System.out.println("Löytyi vika solmu: "+ nyt);
         return nyt.getRivit();
     }
     
@@ -90,8 +90,7 @@ public class Puu {
      */
     public Taulukko[] etsi(String hakusanat){
         String[] sanat = hakusanat.split(" ");
-        Taulukko[] taul1 = etsiSana(sanat[0]);
-        
+        Taulukko[] taul1 = etsiSana(sanat[0]);        
         Taulukko[] uusi = taul1;
         
         if(taul1 == null){
@@ -123,7 +122,7 @@ public class Puu {
                     }
                 }                
             }
-            taul1 = taul2;
+            taul1 = uusi;
         }
         return uusi; 
     }

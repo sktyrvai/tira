@@ -84,7 +84,7 @@ public class Sanaindeksi {
                 }
             } else {System.out.println("Sanaa tai sanoja " +sana + " ei löytynyt :(");
             }
-            //löytyi kpl hakusanalla +sana
+            //löytyi kpl hakusanalla+ sana
             System.out.println();
             System.out.println("Anna seuraava etsittävä sana. Anna tyhjä, jos tahdot lopettaa.");
             sana = lukija.nextLine();
