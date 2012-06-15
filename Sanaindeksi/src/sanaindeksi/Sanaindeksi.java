@@ -25,13 +25,24 @@ public class Sanaindeksi {
         Taulukko[] tekstit; 
         int tiedlkm = args.length;
  
-        
+        /*
+         * Jos tiedostoje ei ole annettu kutsun yhteydessä 
+         */
         if(tiedlkm == 0){
             boolean looppi = true;
             while(looppi){
-                System.out.println("Kuinka monta tiedostoa annat?");
-                tiedlkm = lukija.nextInt();
-                lukija.nextLine();
+                
+                boolean eiLuku = true;
+                while(eiLuku){
+                    try{
+                        System.out.println("Kuinka monta tiedostoa annat?");
+                        tiedlkm = Integer.parseInt(lukija.nextLine());
+                        eiLuku = false;
+                    } catch (Exception e){
+                        System.out.println("");                        
+                    }
+                }
+                
             
                 Solmu.setTiedLkm(tiedlkm);            
                 tiedostot = new String[tiedlkm];         
@@ -41,7 +52,9 @@ public class Sanaindeksi {
                 String vastaus = lukija.nextLine();
             
                 if(vastaus.length() >0){
+                    
                     tiedostot = vastaus.split(" ");
+                    
                     if(tiedostot.length == tiedlkm){
                       looppi = false;  
                     } else{
@@ -51,10 +64,16 @@ public class Sanaindeksi {
                 
 
             }
-        }   else{ tiedostot = args;
+            /*
+             * tiedostot annettu komentorivin yhteydessä
+             */
+        }   else{ 
+            
+            tiedostot = args;
             tiedlkm = tiedostot.length;         
         }
             
+        
         tekstit = new Taulukko[tiedlkm];
         
         testipuu = new Puu();
@@ -65,7 +84,13 @@ public class Sanaindeksi {
                teksti = puulukija.lisaaTiedosto(new File(tiedostot[i]));
                tekstit[i] = teksti;
         }
+        
+        for(int i= 0;i<tiedostot.length; i++){
+            File t = new File(tiedostot[i]);
+            tiedostot[i] = t.getName();
+        }
        
+        
         System.out.println("..............................");
         System.out.println("Tekstitiedostot luettu.");
         
@@ -103,9 +128,7 @@ public class Sanaindeksi {
         //
         // tee testejä       
 
-        // ensimmäisellä rivillä outo ylimääräinen merkki
-        // merkit pois puuhun menevistä sanoista:
-        // http://mooc.cs.helsinki.fi/content/materiaali-5#e165
+        
         
     }
     
