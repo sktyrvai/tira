@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package sanaindeksi;
 
 import java.io.File;
@@ -9,14 +6,13 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
- *
+ * Sanaindeksi-projektin pääluokka. Sisältää käyttöliittymän, luo Puun ja sen täyttävän Lukijan sekä säilyttää tekstitiedostot.
  * @author Sanna Tyrväinen
- * @version 18052012
+ * @version 
  */
 public class Sanaindeksi {
 
     public static Scanner lukija = new Scanner(System.in, "UTF-8");
-    //public static Scanner lukija = new Scanner(new InputStreamReader(System.in, "UTF-8"));
     public static void main(String[] args) {
                     
         Puu testipuu;
@@ -113,7 +109,7 @@ public class Sanaindeksi {
                 System.out.println("Hakusanalla "+sana+ " löytyi " +loydetyt + " riviä.");
             } else {System.out.println("Sanaa tai sanoja " +sana + " ei löytynyt :(");
             }
-            //löytyi kpl hakusanalla+ sana
+
             System.out.println();
             System.out.println("Anna seuraava etsittävä sana. Anna tyhjä, jos tahdot lopettaa.");
             sana = lukija.nextLine();
@@ -123,10 +119,7 @@ public class Sanaindeksi {
          
         //System.out.println(testipuu);
         // hyväksyy muuten vain utf-8-tekstitedostoja
-        
-        // TODO:
-        //
-        // tee testejä       
+          
 
         
         

@@ -134,7 +134,8 @@ public class Puu {
         return this.juuri;
     }
     
-    /*Esa Junttilan Trie-puun tulostus
+    /**
+     * Esa Junttilan Trie-puun tulostus.
      * http://www.cs.helsinki.fi/u/ejunttil/opetus/tiraharjoitus/treeprint.txt 
     */
     
@@ -142,6 +143,11 @@ public class Puu {
 	return this.toStringHelp(this.juuri, "");
     }
 
+     /**
+     * Esa Junttilan Trie-puun tulostus.
+     * http://www.cs.helsinki.fi/u/ejunttil/opetus/tiraharjoitus/treeprint.txt 
+    */
+    
     private String toStringHelp(Solmu node, String indentation) {
 	if (node == null) return "";
 	else {
