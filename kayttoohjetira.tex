@@ -1,0 +1,38 @@
+\documentclass[12pt,a4paper,titlepage,leqno]{article}
+\usepackage[latin1]{inputenc}  % Unixin merkistö
+\usepackage[T1]{fontenc}       % kirjaimet, joissa aksentteja (skandit)
+%\usepackage[finnish]{babel}
+\usepackage{amsfonts}         
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ae,aecompl,amsbsy}
+
+\usepackage{ucs}
+
+\usepackage{verbatim}
+\usepackage[finnish]{babel}
+
+\begin{document}
+
+\section*{Käyttöohje}
+
+Ohjelma ajetaan komentoriviltä sanaindeksi.jar. Voit lisätä perään välilyönnillä erotettuna tekstitiedostot, joita haluat käyttää. Tämä ei ole välttämätöntä, koska jos näin ei tee, ohjelma kysyy niitä erikseen. tekstitiedosto.txt.
+
+Ohjelman suorituksen alussa, jos ohjelmaa kutsuessa ei olla annettu käytettäviä tekstitiedostoja, ohjelma kysyy annettavien tiedostojen määrän ja sen jälkeen tiedostojen nimiä. Tiedostojen lukumäärä annetaan numerona ja itse tiedostot annetaan kokonimellä välilyönnillä erotettuna:
+ 
+\emph{tekstitiedosto.txt tekstitiedosto2.txt}.
+
+Tarkista, että tekstitiedostot käyttävät Unicode-merkistöä välttääksesi merkistöongelmat.
+
+Ohjelman lisättyä tekstitiedostot se kysyy haettavia sanoja tai sanojen alkuja.  Hakusanoja voi olla useampi ja tällöin ohjelma hakee rivejä, jotka sisältävät kaikki hakusanat. Hakusanat saavat sisältä kirjaimia a-z, ä, ö ja å, muttei numeroita tai erikoismerkkejä. Isot kirjaimet eivät haittaa. Jos siis haet esimerkiksi sanalla \emph{kame}, saat kaikki rivit, jotka sisältävät kame-alkuisia sanoja.
+
+
+ 
+Miten koodi käännettään (jos valmis ajettava ohjelma ei mukana palautuksessa)
+  
+  
+Miten ohjelma suoritetaan, miten eri toiminnallisuuksia käytetään
+
+
+
+\end{document}
