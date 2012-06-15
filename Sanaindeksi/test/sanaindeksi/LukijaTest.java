@@ -70,43 +70,109 @@ public class LukijaTest {
     
     @Test
     public void testaaLukuaikaa(){
+        System.out.println();
         Lukija lukija = new Lukija(koivu);
         Solmu.setTiedLkm(2);
         long alku = System.currentTimeMillis();
         lukija.lisaaTiedosto(new File("testi4.txt"));
         lukija.lisaaTiedosto(new File("testi5.txt"));
         long loppu = System.currentTimeMillis();
-        System.out.println("Kaksi tekstitiedostoa, rivejä 542 ja 898. Kesti " + (loppu-alku));
+        System.out.println("Kaksi tekstitiedostoa, rivejä 542 ja 898. Kesti " + (loppu-alku)+ "ms");
+        
+        alku = System.currentTimeMillis();
+        koivu.etsi("brain");
+        loppu = System.currentTimeMillis();
+        System.out.println("etsi sanan brain puusta ajassa: " +(loppu-alku)+ "ms");
+        
+        alku = System.currentTimeMillis();
+        koivu.etsi("onomatopoeettinenalkoholiliikelaulutanssikoreografia");
+        loppu = System.currentTimeMillis();
+        System.out.println("etsi sanan onomatopoeettinenalkoholiliikelaulutanssikoreografia puusta ajassa: " +(loppu-alku)+ "ms");
         
     }
     
     @Test
     public void vertaaLukuAikaaIso(){
+        System.out.println();
         Lukija lukija = new Lukija(koivu);
         long alku = System.currentTimeMillis();
         lukija.lisaaTiedosto(new File("kalevala.txt"));
         long loppu = System.currentTimeMillis();  
-        System.out.println("Kalevalan lukemiseen, 23 142 riviä, meni "+ (loppu-alku));
+        System.out.println("Kalevalan lukemiseen, 23 142 riviä, meni "+ (loppu-alku)+"ms");
+        
+        alku = System.currentTimeMillis();
+        koivu.etsi("vanha");
+        loppu = System.currentTimeMillis();
+        System.out.println("etsi sanan vanha Kalevala-puusta ajassa: " +(loppu-alku)+ "ms");
+        
+        alku = System.currentTimeMillis();
+        koivu.etsi("onomatopoeettinenalkoholiliikelaulutanssikoreografia");
+        loppu = System.currentTimeMillis();
+        System.out.println("etsi sanan onomatopoeettinenalkoholiliikelaulutanssikoreografia Kalevala-puusta ajassa: " +(loppu-alku)+ "ms");
+    }
+    
+    @Test
+    public void vertaaLukuAikaapieni(){
+        System.out.println();
+        Lukija lukija = new Lukija(koivu);
+        long alku = System.currentTimeMillis();
+        lukija.lisaaTiedosto(new File("testi.txt"));
+        long loppu = System.currentTimeMillis();  
+        System.out.println("Tiedoston lukemiseen, 11 riviä, meni "+ (loppu-alku)+ "ms");
+        
+        alku = System.currentTimeMillis();
+        koivu.etsi("toine");
+        loppu = System.currentTimeMillis();
+        System.out.println("etsi sanan toine puusta ajassa: " +(loppu-alku)+ "ms");
+        
+        alku = System.currentTimeMillis();
+        koivu.etsi("onomatopoeettinenalkoholiliikelaulutanssikoreografia");
+        loppu = System.currentTimeMillis();
+        System.out.println("etsi sanan onomatopoeettinenalkoholiliikelaulutanssikoreografia puusta ajassa: " +(loppu-alku)+ "ms");
     }
     
     @Test
     public void vertaaLukuAikaaEmilypieni(){
+        System.out.println();
         Lukija lukija = new Lukija(koivu);
         long alku = System.currentTimeMillis();
         lukija.lisaaTiedosto(new File("testi4.txt"));
         long loppu = System.currentTimeMillis();  
-        System.out.println("Tiedoston lukemiseen, 542 riviä, meni "+ (loppu-alku));
+        System.out.println("Tiedoston lukemiseen, 542 riviä, meni "+ (loppu-alku)+ "ms");
+        
+        alku = System.currentTimeMillis();
+        koivu.etsi("count");
+        loppu = System.currentTimeMillis();
+        System.out.println("etsi sanan count puusta ajassa: " +(loppu-alku)+ "ms");
+        
+        alku = System.currentTimeMillis();
+        koivu.etsi("onomatopoeettinenalkoholiliikelaulutanssikoreografia");
+        loppu = System.currentTimeMillis();
+        System.out.println("etsi sanan onomatopoeettinenalkoholiliikelaulutanssikoreografia puusta ajassa: " +(loppu-alku)+ "ms");
     }
     
     @Test
     public void vertaaLukuAikaaEmilykeski(){
+        System.out.println();
         Lukija lukija = new Lukija(koivu);
         long alku = System.currentTimeMillis();
         lukija.lisaaTiedosto(new File("testi5.txt"));
         long loppu = System.currentTimeMillis();  
-        System.out.println("Tiedoston lukemiseen, 898 riviä, meni "+ (loppu-alku));
+        System.out.println("Tiedoston lukemiseen, 899 riviä, meni "+ (loppu-alku)+ "ms");
+        
+        alku = System.currentTimeMillis();
+        koivu.etsi("brain");
+        loppu = System.currentTimeMillis();
+        System.out.println("etsi sanan brain puusta ajassa: " +(loppu-alku)+ "ms");
+        
+        alku = System.currentTimeMillis();
+        koivu.etsi("onomatopoeettinenalkoholiliikelaulutanssikoreografia");
+        loppu = System.currentTimeMillis();
+        System.out.println("etsi sanan onomatopoeettinenalkoholiliikelaulutanssikoreografia puusta ajassa: " +(loppu-alku)+ "ms");
     }
     
     // lue tiedosto ja etsi kaikki tiedoston sanat puusta
+    // testaa hakuaikaa isoissa puissa.
+    // nanoTime()
   
 }

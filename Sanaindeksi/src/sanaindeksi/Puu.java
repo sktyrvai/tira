@@ -70,8 +70,6 @@ public class Puu {
      * @return String[] jos sana löytyi palauta viimeisen solmun rivitiedot
      */    
     public Taulukko[] etsiSana(String sana){
-        //System.out.println();
-        //System.out.println("Etsitään sanaa " +sana);
         Solmu nyt = this.juuri;
         for(int i = 0; i<sana.length(); i++){
             Solmu seur = nyt.lapsisolmu(sana.charAt(i));
@@ -79,7 +77,7 @@ public class Puu {
                 return null;
             } else nyt = seur;
         }
-        System.out.println("Löytyi vika solmu: "+ nyt);
+        //System.out.println("Löytyi vika solmu: "+ nyt);
         return nyt.getRivit();
     }
     

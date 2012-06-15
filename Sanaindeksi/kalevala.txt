@@ -19010,6 +19010,10 @@ Kommentit ja korjaukset:
   tutkaeli tullehilta:
   "Mipä miehillä sanoma,
   urohilla uusi tieto?"
+  
+ onomatopoeettinenalkoholiliikelaulutanssikoreografia
+
+
   Vaka vanha Väinämöinen,
   tuopa tuohon vastoavi:
   "Sammosta sanomat miesten,
