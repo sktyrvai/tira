@@ -5,6 +5,7 @@ package sanaindeksi;
  * and open the template in the editor.
  */
 
+import java.io.File;
 import org.junit.*;
 import static org.junit.Assert.*;
 
@@ -13,13 +14,14 @@ import static org.junit.Assert.*;
  * @author Sanna
  */
 public class LukijaTest {
-    
+    Puu koivu;
     public LukijaTest() {
+        koivu = new Puu();
+        Solmu.setTiedLkm(1);
     }
 
     @BeforeClass
     public static void setUpClass() throws Exception {
-        Puu koivu = new Puu();
     }
 
     @AfterClass
@@ -35,15 +37,76 @@ public class LukijaTest {
     }
     
     @Test
-    public void jotain(){
+    public void testaaPerus(){
+        Lukija lukija = new Lukija(koivu);
+        File tiedosto = new File("testi.txt");
+        Taulukko taulu = lukija.lisaaTiedosto(tiedosto);
+        
+        Taulukko[] tulos = koivu.etsi("toinen");
+        assertTrue(1==tulos[0].getKoko());
+        
+        tulos = koivu.etsi("kamelilauma");
+        assertTrue(null == tulos);      
+    }
+    
+    @Test
+    public void testaaTyhjaa(){
+        Lukija lukija = new Lukija(koivu);
+        Taulukko taulu = lukija.lisaaTiedosto(new File("empty.txt"));
+        assertTrue(koivu.etsi("anything")==null);
+             
+    }
+     
+    @Test
+    public void testaaSiistijaa(){
+        Lukija lukija = new Lukija(koivu);
+        assertTrue(lukija.siistiSana("....").equals(""));
+        assertTrue(lukija.siistiSana("4Kfg?").equals("kfg"));
+        assertTrue(lukija.siistiSana("! ä+IT!!11i").equals("äiti"));
+        assertFalse(lukija.siistiSana("AAAu+'%_%doh").equals("Aaaudoh"));
+        assertTrue(lukija.siistiSana("Tämä Ån pitkähkö 7e571 lause, mutta ei se mitaan!!?").equals("tämäånpitkähköelausemuttaeisemitaan"));
+        assertTrue(lukija.siistiSana("").equals(""));
+    } 
+    
+    @Test
+    public void testaaLukuaikaa(){
+        Lukija lukija = new Lukija(koivu);
+        Solmu.setTiedLkm(2);
+        long alku = System.currentTimeMillis();
+        lukija.lisaaTiedosto(new File("testi4.txt"));
+        lukija.lisaaTiedosto(new File("testi5.txt"));
+        long loppu = System.currentTimeMillis();
+        System.out.println("Kaksi tekstitiedostoa, rivejä 542 ja 898. Kesti " + (loppu-alku));
         
     }
-            
-    // testaa tyhjän tiedoston lukua
-    // testaa välimerkkeihin suhtautuminen!
+    
+    @Test
+    public void vertaaLukuAikaaIso(){
+        Lukija lukija = new Lukija(koivu);
+        long alku = System.currentTimeMillis();
+        lukija.lisaaTiedosto(new File("kalevala.txt"));
+        long loppu = System.currentTimeMillis();  
+        System.out.println("Kalevalan lukemiseen, 23 142 riviä, meni "+ (loppu-alku));
+    }
+    
+    @Test
+    public void vertaaLukuAikaaEmilypieni(){
+        Lukija lukija = new Lukija(koivu);
+        long alku = System.currentTimeMillis();
+        lukija.lisaaTiedosto(new File("testi4.txt"));
+        long loppu = System.currentTimeMillis();  
+        System.out.println("Tiedoston lukemiseen, 542 riviä, meni "+ (loppu-alku));
+    }
+    
+    @Test
+    public void vertaaLukuAikaaEmilykeski(){
+        Lukija lukija = new Lukija(koivu);
+        long alku = System.currentTimeMillis();
+        lukija.lisaaTiedosto(new File("testi5.txt"));
+        long loppu = System.currentTimeMillis();  
+        System.out.println("Tiedoston lukemiseen, 898 riviä, meni "+ (loppu-alku));
+    }
+    
     // lue tiedosto ja etsi kaikki tiedoston sanat puusta
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+  
 }

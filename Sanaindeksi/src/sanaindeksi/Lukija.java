@@ -72,7 +72,7 @@ public class Lukija {
     * @return s 
     */
     
-    private String siistiSana(String sana){
+    public String siistiSana(String sana){
         String s = "";
         sana = sana.toLowerCase();
         for(int i = 0; i<sana.length(); i++){
