@@ -80,15 +80,15 @@ public class LukijaTest {
         long loppu = System.currentTimeMillis();
         System.out.println("Kaksi tekstitiedostoa, rivejä 542 ja 898. Kesti " + (loppu-alku)+ "ms");
         
-        alku = System.currentTimeMillis();
+        alku = System.nanoTime();
         koivu.etsi("brain");
-        loppu = System.currentTimeMillis();
-        System.out.println("etsi sanan brain puusta ajassa: " +(loppu-alku)+ "ms");
+        loppu = System.nanoTime();
+        System.out.println("etsi sanan brain puusta ajassa: " +(loppu-alku)+ "* 10^-6 ms");
         
-        alku = System.currentTimeMillis();
+        alku = System.nanoTime();
         koivu.etsi("onomatopoeettinenalkoholiliikelaulutanssikoreografia");
-        loppu = System.currentTimeMillis();
-        System.out.println("etsi sanan onomatopoeettinenalkoholiliikelaulutanssikoreografia puusta ajassa: " +(loppu-alku)+ "ms");
+        loppu = System.nanoTime();
+        System.out.println("etsi sanan onomatopoeettinenalkoholiliikelaulutanssikoreografia puusta ajassa: " +(loppu-alku)+ "*10^-6 ms");
         
     }
     
@@ -103,20 +103,20 @@ public class LukijaTest {
     }
      @Test
      public void vertaaHakuAikaaIso(){
-        long alku = System.currentTimeMillis();
+        long alku = System.nanoTime();
         koivu.etsi("vanha");
-        long loppu = System.currentTimeMillis();
-        System.out.println("etsi sanan vanha Kalevala-puusta ajassa: " +(loppu-alku)+ "ms");
+        long loppu = System.nanoTime();
+        System.out.println("etsi sanan vanha Kalevala-puusta ajassa: " +(loppu-alku)+ "*10^-6 ms");
         
-        alku = System.currentTimeMillis();
+        alku = System.nanoTime();
         koivu.etsi("onomatopoeettinenalkoholiliikelaulutanssikoreografia");
-        loppu = System.currentTimeMillis();
-        System.out.println("etsi sanan onomatopoeettinenalkoholiliikelaulutanssikoreografia Kalevala-puusta ajassa: " +(loppu-alku)+ "ms");
+        loppu = System.nanoTime();
+        System.out.println("etsi sanan onomatopoeettinenalkoholiliikelaulutanssikoreografia Kalevala-puusta ajassa: " +(loppu-alku)+ "*10^-6 ms");
         
-        alku = System.currentTimeMillis();
+        alku = System.nanoTime();
         koivu.etsi("onomatopoeettinenalkoholiliikelaulutanssikoreografia vanha");
-        loppu = System.currentTimeMillis();
-        System.out.println("etsi sanat vanha ja  onomatopoeettinenalkoholiliikelaulutanssikoreografia Kalevala-puusta ajassa: " +(loppu-alku)+ "ms");
+        loppu = System.nanoTime();
+        System.out.println("etsi sanat vanha ja  onomatopoeettinenalkoholiliikelaulutanssikoreografia Kalevala-puusta ajassa: " +(loppu-alku)+ "*10^-6 ms");
         
         
     }
@@ -130,15 +130,15 @@ public class LukijaTest {
         long loppu = System.currentTimeMillis();  
         System.out.println("Tiedoston lukemiseen, 11 riviä, meni "+ (loppu-alku)+ "ms");
         
-        alku = System.currentTimeMillis();
+        alku = System.nanoTime();
         koivu.etsi("toine");
-        loppu = System.currentTimeMillis();
-        System.out.println("etsi sanan toine puusta ajassa: " +(loppu-alku)+ "ms");
+        loppu = System.nanoTime();
+        System.out.println("etsi sanan toine puusta ajassa: " +(loppu-alku)+ "*10^-6 ms");
         
-        alku = System.currentTimeMillis();
+        alku = System.nanoTime();
         koivu.etsi("onomatopoeettinenalkoholiliikelaulutanssikoreografia");
-        loppu = System.currentTimeMillis();
-        System.out.println("etsi sanan onomatopoeettinenalkoholiliikelaulutanssikoreografia puusta ajassa: " +(loppu-alku)+ "ms");
+        loppu = System.nanoTime();
+        System.out.println("etsi sanan onomatopoeettinenalkoholiliikelaulutanssikoreografia puusta ajassa: " +(loppu-alku)+ "*10^-6 ms");
     }
     
     @Test
@@ -154,20 +154,20 @@ public class LukijaTest {
     @Test
     public void vertaaHakuAikaaEmilypieni(){
         
-        long alku = System.currentTimeMillis();
+        long alku = System.nanoTime();
         koivu.etsi("count");
-        long loppu = System.currentTimeMillis();
-        System.out.println("etsi sanan count puusta ajassa: " +(loppu-alku)+ "ms");
+        long loppu = System.nanoTime();
+        System.out.println("etsi sanan count puusta ajassa: " +(loppu-alku)+ "*10^-6 ms");
         
-        alku = System.currentTimeMillis();
+        alku = System.nanoTime();
         koivu.etsi("onomatopoeettinenalkoholiliikelaulutanssikoreografia");
-        loppu = System.currentTimeMillis();
-        System.out.println("etsi sanan onomatopoeettinenalkoholiliikelaulutanssikoreografia puusta  (542 riviä) ajassa: " +(loppu-alku)+ "ms");
+        loppu = System.nanoTime();
+        System.out.println("etsi sanan onomatopoeettinenalkoholiliikelaulutanssikoreografia puusta  (542 riviä) ajassa: " +(loppu-alku)+ "*10^-6 ms");
         
-        alku = System.currentTimeMillis();
+        alku = System.nanoTime();
         koivu.etsi("onomatopoeettinenalkoholiliikelaulutanssikoreografia count");
-        loppu = System.currentTimeMillis();
-        System.out.println("etsi sanat count ja  onomatopoeettinenalkoholiliikelaulutanssikoreografia puusta  (542 riviä) ajassa: " +(loppu-alku)+ "ms");
+        loppu = System.nanoTime();
+        System.out.println("etsi sanat count ja  onomatopoeettinenalkoholiliikelaulutanssikoreografia puusta  (542 riviä) ajassa: " +(loppu-alku)+ "*10^-6 ms");
     }
     
     @Test
@@ -183,26 +183,27 @@ public class LukijaTest {
     @Test            
     public void vertaaHakuAikaaEmilykeski(){
         
-        long alku = System.currentTimeMillis();
+        long alku = System.nanoTime();
         koivu.etsi("brain");
-        long loppu = System.currentTimeMillis();
-        System.out.println("etsi sanan brain puusta ajassa: " +(loppu-alku)+ "ms");
+        long loppu = System.nanoTime();
+        System.out.println("etsi sanan brain puusta ajassa: " +(loppu-alku)+ "*10^-6 ms");
         
-        alku = System.currentTimeMillis();
+        alku = System.nanoTime();
         koivu.etsi("onomatopoeettinenalkoholiliikelaulutanssikoreografia");
-        loppu = System.currentTimeMillis();
-        System.out.println("etsi sanan onomatopoeettinenalkoholiliikelaulutanssikoreografia puusta (899) ajassa: " +(loppu-alku)+ "ms");
+        loppu = System.nanoTime();
+        System.out.println("etsi sanan onomatopoeettinenalkoholiliikelaulutanssikoreografia puusta (899) ajassa: " +(loppu-alku)+ "*10^-6 ms");
         
-        alku = System.currentTimeMillis();
+        alku = System.nanoTime();
         koivu.etsi("onomatopoeettinenalkoholiliikelaulutanssikoreografia count");
-        loppu = System.currentTimeMillis();
-        System.out.println("etsi sanat count ja  onomatopoeettinenalkoholiliikelaulutanssikoreografia puusta  (899 riviä) ajassa: " +(loppu-alku)+ "ms");
+        loppu = System.nanoTime();
+        System.out.println("etsi sanat count ja  onomatopoeettinenalkoholiliikelaulutanssikoreografia puusta  (899 riviä) ajassa: " +(loppu-alku)+ "*10^-6 ms");
+        
+        alku = System.nanoTime();
+        koivu.etsi("of the of hone");
+        loppu = System.nanoTime();
+        System.out.println("etsi sanat of the hone puusta  (899 riviä) ajassa: " +(loppu-alku)+ "* 10^-6 ms");
         
         
     }
-    
-    // lue tiedosto ja etsi kaikki tiedoston sanat puusta
-    // testaa hakuaikaa isoissa puissa.
-    // nanoTime()
   
 }
