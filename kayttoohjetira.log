@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=latex 2012.1.19)  15 JUN 2012 21:51
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=latex 2012.1.19)  15 JUN 2012 21:52
 entering extended mode
-**maarittelytira.tex
-("C:\Documents and Settings\Sanna\Omat tiedostot\tira\maarittelytira.tex"
+**kayttoohjetira.tex
+("C:\Documents and Settings\Sanna\Omat tiedostot\tira\kayttoohjetira.tex"
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -171,7 +171,7 @@ File: babel.def 2008/07/06 v3.8l Babel common definitions
 )
 Package babel Info: Making " an active character on input line 89.
 ))
-("C:\Documents and Settings\Sanna\Omat tiedostot\tira\maarittelytira.aux")
+("C:\Documents and Settings\Sanna\Omat tiedostot\tira\kayttoohjetira.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
@@ -187,28 +187,17 @@ LaTeX Font Info:    ... okay on input line 15.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\unicode\ucsencs.def"
 File: ucsencs.def 2003/11/29 Fixes to fontencodings LGR, T3
-)
-Overfull \hbox (8.1722pt too wide) in paragraph at lines 37--43
-\T1/aer/m/n/12 Trie: http://www.cs.helsinki.fi/u/ejunttil/opetus/tiraharjoitus/
-trie.html Trien
- []
+) [1
 
-
-Overfull \hbox (17.06393pt too wide) in paragraph at lines 37--43
-\T1/aer/m/n/12 tu-los-tus: http://www.cs.helsinki.fi/u/ejunttil/opetus/tiraharj
-oitus/treeprint.txt
- []
-
-[1
-
-] ("C:\Documents and Settings\Sanna\Omat tiedostot\tira\maarittelytira.aux") ) 
+]
+("C:\Documents and Settings\Sanna\Omat tiedostot\tira\kayttoohjetira.aux") ) 
 Here is how much of TeX's memory you used:
- 1961 strings out of 494020
- 24585 string characters out of 3146467
- 81481 words of memory out of 3000000
+ 1962 strings out of 494020
+ 24591 string characters out of 3146467
+ 80481 words of memory out of 3000000
  5255 multiletter control sequences out of 15000+200000
- 10719 words of font info for 20 fonts, out of 3000000 for 9000
+ 10988 words of font info for 20 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 28i,4n,24p,492b,133s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 28i,4n,24p,436b,131s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on maarittelytira.dvi (1 page, 2740 bytes).
+Output written on kayttoohjetira.dvi (1 page, 2036 bytes).

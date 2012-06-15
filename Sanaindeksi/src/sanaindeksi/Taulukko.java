@@ -20,10 +20,17 @@ public class Taulukko {
 
    
     
+    /**
+     * Luo dynaamisen taulukon, jossa on viisi paikkaa.
+     */
     public Taulukko(){     
         taul = new Object[5];
     }
     
+    /**
+     * Luo dynaamisen taulukon, jossa on k paikkaa.
+     * @param k 
+     */
     public Taulukko(int k){
         taul = new Object[k+1];
     }

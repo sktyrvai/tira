@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=latex 2012.1.19)  15 JUN 2012 21:51
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=latex 2012.1.19)  15 JUN 2012 21:50
 entering extended mode
-**maarittelytira.tex
-("C:\Documents and Settings\Sanna\Omat tiedostot\tira\maarittelytira.tex"
+**Toteutus.tex
+("C:\Documents and Settings\Sanna\Omat tiedostot\tira\Toteutus.tex"
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -171,7 +171,7 @@ File: babel.def 2008/07/06 v3.8l Babel common definitions
 )
 Package babel Info: Making " an active character on input line 89.
 ))
-("C:\Documents and Settings\Sanna\Omat tiedostot\tira\maarittelytira.aux")
+("C:\Documents and Settings\Sanna\Omat tiedostot\tira\Toteutus.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
@@ -188,27 +188,88 @@ LaTeX Font Info:    ... okay on input line 15.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\unicode\ucsencs.def"
 File: ucsencs.def 2003/11/29 Fixes to fontencodings LGR, T3
 )
-Overfull \hbox (8.1722pt too wide) in paragraph at lines 37--43
-\T1/aer/m/n/12 Trie: http://www.cs.helsinki.fi/u/ejunttil/opetus/tiraharjoitus/
-trie.html Trien
- []
-
-
-Overfull \hbox (17.06393pt too wide) in paragraph at lines 37--43
-\T1/aer/m/n/12 tu-los-tus: http://www.cs.helsinki.fi/u/ejunttil/opetus/tiraharj
-oitus/treeprint.txt
+Overfull \hbox (4.28188pt too wide) in paragraph at lines 28--29
+\T1/aer/m/n/12 Taulukko-luokka on dy-naa-mi-nen tau-luk-ko, jo-ka kak-sin-ker-t
+ais-taa ko-kon-sa täyt-
  []
 
 [1
 
-] ("C:\Documents and Settings\Sanna\Omat tiedostot\tira\maarittelytira.aux") ) 
-Here is how much of TeX's memory you used:
- 1961 strings out of 494020
- 24585 string characters out of 3146467
- 81481 words of memory out of 3000000
- 5255 multiletter control sequences out of 15000+200000
- 10719 words of font info for 20 fonts, out of 3000000 for 9000
- 714 hyphenation exceptions out of 8191
- 28i,4n,24p,492b,133s stack positions out of 5000i,500n,10000p,200000b,50000s
+]
+Underfull \hbox (badness 10000) in paragraph at lines 37--39
 
-Output written on maarittelytira.dvi (1 page, 2740 bytes).
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--47
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--57
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--63
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--66
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--76
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--81
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
+
+ []
+
+[3] [4]
+Overfull \hbox (160.9185pt too wide) in paragraph at lines 128--130
+[]\T1/aer/m/n/12 Trien tu-los-tus, Esa Junt-ti-la, 2005: http://www.cs.helsinki
+.fi/u/ejunttil/opetus/tiraharjoitus/treeprint.txt 
+ []
+
+
+Overfull \hbox (87.62283pt too wide) in paragraph at lines 134--136
+[]\T1/aer/m/n/12 Tioterakenteet, Pat-rik Flo-reen, 2012: http://www.cs.helsinki
+.fi/u/floreen/tira2012/tira.pdf 
+ []
+
+[5] ("C:\Documents and Settings\Sanna\Omat tiedostot\tira\Toteutus.aux") ) 
+Here is how much of TeX's memory you used:
+ 1968 strings out of 494020
+ 24622 string characters out of 3146467
+ 83481 words of memory out of 3000000
+ 5262 multiletter control sequences out of 15000+200000
+ 13725 words of font info for 22 fonts, out of 3000000 for 9000
+ 714 hyphenation exceptions out of 8191
+ 28i,4n,24p,1049b,197s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on Toteutus.dvi (5 pages, 11288 bytes).

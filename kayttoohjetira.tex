@@ -14,25 +14,21 @@
 
 \begin{document}
 
-\section*{Käyttöohje}
+\section*{Käyttöohje - Sanaindeksi}
 
-Ohjelma ajetaan komentoriviltä sanaindeksi.jar. Voit lisätä perään välilyönnillä erotettuna tekstitiedostot, joita haluat käyttää. Tämä ei ole välttämätöntä, koska jos näin ei tee, ohjelma kysyy niitä erikseen. tekstitiedosto.txt.
-
-Ohjelman suorituksen alussa, jos ohjelmaa kutsuessa ei olla annettu käytettäviä tekstitiedostoja, ohjelma kysyy annettavien tiedostojen määrän ja sen jälkeen tiedostojen nimiä. Tiedostojen lukumäärä annetaan numerona ja itse tiedostot annetaan kokonimellä välilyönnillä erotettuna:
+Ohjelma ajetaan komentoriviltä sanaindeksi.jar. Voit lisätä perään välilyönnillä erotettuna tekstitiedostot (ja mahdolliset polut), joita haluat käyttää. 
+\begin{quote}
+\emph{sanaindeksi.jar tekstitiedosto.txt tekstitiedosto2.txt}.
+\end{quote}
+Tämä ei ole välttämätöntä, koska ohjelman suorituksen alussa, jos ohjelmaa kutsuessa ei olla annettu käytettäviä tekstitiedostoja, ohjelma kysyy annettavien tiedostojen määrän ja sen jälkeen tiedostojen nimiä. Tiedostojen lukumäärä annetaan numerona ja itse tiedostot annetaan kokonimellään välilyönnillä erotettuna. Esimerkiksi
  
-\emph{tekstitiedosto.txt tekstitiedosto2.txt}.
+ \begin{quote}
+\emph{tekstitiedosto.txt tekstitiedosto2.txt}
+\end{quote}
 
-Tarkista, että tekstitiedostot käyttävät Unicode-merkistöä välttääksesi merkistöongelmat.
+Tarkista, että tekstitiedostot käyttävät Unicode-merkistöä välttääksesi merkistöongelmat. Jos tiedostoja ei ole tai ne ovat annettu jossain muussa muodossa kuin \emph{tiedostonnimi.txt}, ohjelma antaa virheilmoituksen ja lopettaa itsensä.
+
 
 Ohjelman lisättyä tekstitiedostot se kysyy haettavia sanoja tai sanojen alkuja.  Hakusanoja voi olla useampi ja tällöin ohjelma hakee rivejä, jotka sisältävät kaikki hakusanat. Hakusanat saavat sisältä kirjaimia a-z, ä, ö ja å, muttei numeroita tai erikoismerkkejä. Isot kirjaimet eivät haittaa. Jos siis haet esimerkiksi sanalla \emph{kame}, saat kaikki rivit, jotka sisältävät kame-alkuisia sanoja.
-
-
- 
-Miten koodi käännettään (jos valmis ajettava ohjelma ei mukana palautuksessa)
-  
-  
-Miten ohjelma suoritetaan, miten eri toiminnallisuuksia käytetään
-
-
 
 \end{document}

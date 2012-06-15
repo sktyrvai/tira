@@ -20,7 +20,7 @@ public class Lukija {
      */
     private Puu Puu;   
     /**
-     * Luettujen tiedostojen lukumäärä -1.
+     * Luettujen tiedostojen lukumäärä.
      */
     private int tiedostoja;
     /**
@@ -52,8 +52,6 @@ public class Lukija {
             r++;
             String rivi = lukija.nextLine();
             Rivit.lisaa(rivi);
-            //rivi = rivi.toLowerCase();
-            //rivi = rivi.replace('"',' ');
             String[] sanat = rivi.split(" ");
             for(int i = 0; i< sanat.length; i++){
                 String s = this.siistiSana(sanat[i]);  

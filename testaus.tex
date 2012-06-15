@@ -1,0 +1,38 @@
+\documentclass[12pt,a4paper,titlepage,leqno]{article}
+\usepackage[latin1]{inputenc}  % Unixin merkistö
+\usepackage[T1]{fontenc}       % kirjaimet, joissa aksentteja (skandit)
+%\usepackage[finnish]{babel}
+\usepackage{amsfonts}         
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ae,aecompl,amsbsy}
+
+\usepackage{ucs}
+
+\usepackage{verbatim}
+\usepackage[finnish]{babel}
+
+\begin{document}
+
+\section*{Testausdokumentti - Sanaindeksi}
+
+
+Luokkien testaus on suoritetty käyttäen JUnit-yksikkötestejä. Luokkien kaikki metodit on pyritty testaamaan myös erikseen (paitsi osa gettereistä ja settereistä). Osassa testeistä on käytetty arvottuja parametreja. 
+
+Solmu-luokan merkkiparametrina on testattu vain kirjaimia (mukaan lukien ääkköset). Muiden merkkien ei pitäisi tuottaa ongelmia, mutta ne karsitaan ohjelmassa pois Lukijan toimesta. Solmu-luokalla on lisäksi muunmuassa tarkastettu, että lasten lisäys toimii ts. solmulla ei voi olla kahta lasta, joissa olisi sama merkki. Puu-luokasta on testattu perustoiminnallisuus: varmistettu, että puu on alussa tyhjä ja että sanojen lisääminen ja etsiminen toimivat. Taulukko-luokkaa on testattu vastaavast: taulukko on alussa tyhjä, arvot pysyvät järjestyksessä ja sen koko kaksinkertaistuu täyttyessään. Taulukkoa on testattu yksikkötesteillä vain String-olioille, mutta laajemmat testit ovat näyttäneet, etteivät Integer- ja Solmu-oliot aiheuta ongelmia.  
+
+Lukija-luokan yksikkötestit testaavat paljon myös ohjelman toiminnallisuutta. Koska lukijan pääasiallinen tehtävä on käsitellä ja lukea tekstitiedostoja sopivampaan muotoon puulle, on näissä testeissä testattu myös puun hakutoiminnallisuutta.
+
+Testauksessa käytetyt testidokumentit olivat sekä englannin- että suomenkielisiä. Suurin oli suomenkielisen Kalevalan sisältävä kalevala.txt, jossa oli reilu 23 000 riviä, lisäksi oli kaksi Emily Dickinsonin runoja sisältää englanninkielistä tekstitiedostoa, testi4.txt 452 riviä ja testi5.txt 899 riviä, sekä useita pienempiä tekstitiedostoja, joita käytettiin erityisesti alussa perustoiminnallisuuksien hiontaan.
+
+Käyttöliittymä ja luokkien mahdolliset omat tulosteet on testattu vain mekaanisesti katsomalla vastaako tuloste odotettua. Tässä on käytetty hyväksi käytettyjä tekstitiedostoja sekä valmista Esa Junttilan Trie-puun tulostusmetodia.  
+
+
+Aikavaativuutta ei ole testattu yksikkötesteillä, mutta Puun rakennusvauheesta, mukaanlukien tiedostojen luku, sekä sanojen hakemisesta on kerätty dataa, jota analysoidaan toteutusdokumentissa. Harjoitustyön palautus sisältää käytetyt JUnit-testit sekä tekstitiedostot. 
+
+\subsubsection*{Lähteet:}
+Esa Junttila, Trie puun tulostus:  
+
+http://www.cs.helsinki.fi/u/ejunttil/opetus/tiraharjoitus/treeprint.txt
+
+\end{document}

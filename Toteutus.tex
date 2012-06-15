@@ -1,0 +1,139 @@
+\documentclass[12pt,a4paper,titlepage,leqno]{article}
+\usepackage[latin1]{inputenc}  % Unixin merkistˆ
+\usepackage[T1]{fontenc}       % kirjaimet, joissa aksentteja (skandit)
+%\usepackage[finnish]{babel}
+\usepackage{amsfonts}         
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ae,aecompl,amsbsy}
+
+\usepackage{ucs}
+
+\usepackage{verbatim}
+\usepackage[finnish]{babel}
+
+\begin{document}
+
+\section*{Toteutusdokumentti - Sanaindeksi}
+
+\subsection*{Ohjelman perusrakenne}
+
+Ohjelman p‰‰luokkana toimii Sanaindeksi, jossa ohjelman tekstik‰yttˆliittym‰ toimii. Se antaa k‰ytt‰j‰n antamat tekstitiedostot yksikerrallaan Lukijalle, joka lukee ne rivi kerrallaan ja antaa kunkin sanan tiedosto- ja rivitietoineen erikoismerkeist‰ ja numeroista siistittyn‰ Puulle. Puu lis‰‰ sanat Solmuihinsa merkki kerrallaan ja sanan lopuksi lis‰‰ solmuun rivitiedon. Jokaisen tiedoston luvun lopuksi Lukija palauttaa Sanaindeksille Taulukon, jonka kussakin indeksiss‰ on tekstitiedoston rivi myˆhemp‰‰ tulostusta varten. Taulukot sanaindeksi tallentaa erillisen taulukkoon, jonka kussakin indeksiss‰ on kunkin tekstitiedoston rivit ja jonka koko m‰‰r‰ytyy, kun alussa kysyt‰‰n tiedosten m‰‰r‰. Vastaavasti jokaisessa Solmussa on saman kokoinen taulukko, jonka jokaisessa indeksiss‰ on vastaavan tekstitiedoston riviesiintymiset ko. solmuun loppuvalle sanalle. 
+
+Kun kaikki tiedostot on luettu, voi k‰ytt‰j‰n hakea sanoja, jolloin Puu suorittaa etsinn‰n hakusanalla tai sanoille. Sanojen alkujen haku toimii myˆs, koska jokaisessa solmussa on sen arvon esiintymiset. Trie-puussa solmun arvohan koostuu solmun, sen vanhemman ja kaikkien esivanhempien arvosta eli Solmu eroaa vanhemmastaan vain yhden merkin. Usean hakusanan tapauksessa Puu etsii jokaisen sanan erikseen ja vertaa n‰iden rivitietoja: kaksi ensimm‰ist‰ ensin, n‰iden esiintymisten leikkausta kolmanteen ja niin edelleen. 
+
+
+\subsection*{Aika-analyysi}
+
+Taulukko-luokka on dynaaminen taulukko, joka kaksinkertaistaa kokonsa t‰yttyess‰‰n. Dynaamisesta taulukosta haku indeksio perusteella on taulukon tapaan O(1) ja etsint‰ O(n), miss‰ n on taulukon alkioiden lukum‰‰r‰. Dynaamisen taulukkon alkion lis‰ys l‰hestyy O(1):t‰, koska se on useimmilla kerroilla O(1) ja vain taulukon t‰yttyess‰ O(n), jolloin kaikki arvot pit‰‰ kopioida uuteen taulukkoon. Taulukon kasvaessa kasvatustarve tulee yh‰ harvemmin vastaan. Dynaamisen taulukon tilavaativuus on noin kaksikertaa tavallisen taulukon O(n). Dynaamista taulukkoa k‰ytet‰‰n ohjelmassa Solmun lasten, tekstitiedostojen sek‰ solmujen rivitietojen s‰ilytykseen.
+
+\subsubsection*{Solmu}
+Solmun luominen ja sen arvon hsku ovat O(1). Lapsen lis‰‰minen solmulle vie O(n), miss‰ n on solmujen lukum‰‰r‰, koska pit‰‰ tarkistaa onko jo olemassa lapsisolmu ko. arvolla.
+
+\subsubsection*{Trie-puu}
+Solmun lis‰ys on kuvattu seuraavassa metodissa. Itse ohjalmassa jokaiseen solmuun lis‰t‰‰n myˆs rivitietoja, mutta ne tapahtuu lis‰‰m‰ll‰ uusi alkio taulukossa olevaan dynaamiseen taulukkoon, jonka indeksit tulevat Lukijalta, ja jonka aika vaativuus on O(1). Solmun lapsisolmujen l‰pik‰ynti vie ajan O(n), miss‰ n on lapsisolmujen m‰‰r‰ ja t‰m‰ pit‰‰ toistaa sanan kaikkien merkkien kohdalla. Aikavaativuus on siis luokkaa O(n*z), miss‰ n on lapsien lukum‰‰r‰ ja z sanan pituus. Jos arvoidaan, ett‰ lapsisolmuja on enint‰‰n 29 erillaista (suomalaisten aakkosten m‰‰r‰), niin t‰llˆin aikavaatimukseksi voisi arvioida O(29*z) = O(z). 
+
+\begin{quote}
+lisays(String sana)\{ \\
+	Solmu nyt = juuri\\  
+	      
+        for(int i = 0:sana.length() i++ )\{\\
+        	Solmu seuraava = nyt.lapsisolmu(sana(i))\\ 
+            if(seur == null)\{\\
+                Solmu x = new Solmu(sana(i))\\
+                nyt.uusiLapsi(x)\\
+                nyt = x \} \\
+                else nyt = seur \}\\
+                
+        
+  \}
+\end{quote}
+
+Yhden sanan etsinn‰ss‰ on ideana edet‰ puuta pitkin juuresta alasp‰in sanan kirjain kerrallaan. Jos seuraavaa kirjainta ei lˆydyk‰‰n, palautetaan null. Muuten palautetaan viimeisen solmun rivitiedot. Aikavaativuus on taas vastaava kuin sanan lis‰‰misess‰: O(n*z) tai vaihtoehtoisesti O(z) kuten edell‰, miss‰ n on solmujen lasten m‰‰r‰ ja z etsityn sanan pituus.
+
+\begin{quote}
+etsiSana(String sana)\{\\
+       Solmu nyt = this.juuri\\
+       
+       for(int i = 0:sana.length(); i++)\{\\
+       
+            Solmu seur = nyt.lapsisolmu(sana(i))\\
+            if(seur == null) return null\\
+             else nyt = seur\}\\
+             
+        return rivitiedot\\        
+   \} \\
+
+\end{quote}
+
+Useamman sanan etsinn‰ss‰ etsit‰‰n jokainen sana erikseen ja sitten vertaillee n‰iden rivitiedostoja. Uloin for-looppi k‰y hakusanoja l‰pi, kun sisempi k‰y kunkin sanan tekstitiedostokohtaisia riviesiintymistaulukoita. Sisin while k‰y l‰pi yht‰ aikaa rivitiedot1:n ja rivitiedot2:n k:nsa rivitaulukoita ja etsii samoja arvoja. While-loopissa siis k‰yd‰‰n l‰pi j‰rjestettyj‰ rivinumerotaulukoita. T‰m‰ voi kest‰‰ O(r+r) = O(r), miss‰ r on kyseess‰ olevan tiedoston rivien lukum‰‰r‰. Sisempi for-looppi k‰y l‰pi kaikkia luettuja tiedostoja, joiden lukum‰‰r‰‰n merkit‰‰n nyt t:ll‰. Uuden rivitiedoston alustus vie O(t) ajan ja uuden sanan haku O(n*z). Uloimman for-loopin sis‰llˆn aikavaativuus on siis luokkaa O(rt)+O(nz). Uloin for-looppi k‰y l‰pi hakusanoja, joita on h kappaletta. Lopullinen aikavaativuus olisi siis O(h(rt+nz)), jonka voisi olettaa pyˆristyv‰t O(hrt), kun tekstitiedostot ovat riitt‰v‰n suuria ja oletamme, ett‰ solmun lapsia n on enint‰‰n joitakin kymmeni‰ ja sanan pituus z on "luonnollinen". 
+
+\begin{quote}
+etsiSanat(String[] hakusana)\{\\
+
+rivitedot1 = etsiSana(hakusana[0])\\
+if(rivitiedot1 == null) return null\\
+
+for(int i= 1:hakusanat.length)\{ \\
+
+rivitiedot2 = etsisana(hakusana[i])\\
+if(rivitiedot2 == null) return null\\
+
+rivitiedotuusi.alustus()\\
+
+
+for(int k = 0; k<rivitiedot.koko)\{ \\
+taulukoiden rivitiedot1[k] ja rivitiedot2[k] vertailu ja yhteisten arvojen lis‰ys rivitiedotuusi[k]:n\\
+\}
+
+rivitiedot1 = uusi;\\
+\}\\
+return rivitiedot uusi;
+\}
+
+\end{quote}
+
+Aikavaativuuden hahmottamista voisi helpottaa seuraava. 
+
+\begin{quote}
+for(sanoja)\{\\
+for(tiedostoja)\{\\
+for(rivej‰+rivej‰)\{\\
+\}
+\}
+\}
+\end{quote}
+
+\subsubsection*{Lukija}
+Tiedostoja lis‰tess‰ k‰yd‰‰n teksti‰ l‰pi rivikerrallaan ja kunkin rivin jokainen sana lis‰t‰ˆ‰n puuhun erikseen, eli aikavaativuus on luokkaaa O(sanojen m‰‰r‰) jokaista tiedostoa kohden.
+
+\subsubsection*{Kokonaisuus}
+Yhden sanan sanahaun voidaan sanovan olevan O(n*z), miss‰ z on sanan pituus ja n solmun lasten maksimi. Useamman sanan hakeminen on noin O(hakusanat *rivit * tiedostot), eli huomasttavasti huonompi.
+ 
+\subsection*{Testeist‰}
+Puun rakenuksesta ja sanojen hausta ker‰ttiin JUnit-testeiss‰ dataa. Puun rakennukseen laskettiin mukaan myˆs tiedostojen luku ja tekstitiedostojen talletus. Tulokset korreloivat jonkin verran koon kanssa, mutta tarkempia arvoita on mahdoton tehd‰, koska tekstitiedoston kokoa mitattiin riveill‰. Sanahauissa aikavaativuuteen tuntui vaikuttavan merkitt‰v‰sti sanan yleisyys hakutekstiss‰. Samoin useamman sanan haussa: jos sana ei ollut jollekin l‰hdeteksteist‰ tyypillinen, oli sill‰ myˆs v‰hemm‰n rivitietoja, joita verrata.
+  
+
+\subsection*{Parannusehdotuksia}
+
+Ohjelmaa voisi parantaa lis‰‰m‰ll‰ mahdollisuuden lis‰t‰ tiedostoja kesken ajon eik‰ vain aluksi. T‰m‰n voisi tehd‰ esim. asettamalla tekstitiedostojen s‰ilytys ja solmujen rivitiedot dynaamisiksi taulukoiksi, mutta t‰m‰ saattaa aiheuttaa ongelmia juuri Solmujen rivitietojen kohdalla. Pit‰isikˆ uutta tiedostoa lis‰tess‰ k‰yd‰ p‰ivitt‰m‰ss‰ kaikki solmut? Vai pit‰isikˆ sen sijaan solmu p‰ivitt‰‰ vain, kun sen tietoihin tulee lis‰ys, jolloin pit‰isi varautua lis‰‰m‰‰n tieto tyhjist‰ tiedoista. J‰lkimm‰inen olisi tehokkaampaa, mutta mahdollisesti myˆs riskialttiimpaa. Lis‰ksi k‰yttˆliittym‰‰ voisi kehitt‰‰ v‰hemm‰n herk‰ksi k‰ytt‰j‰n virheille tiedostoja syˆtt‰ess‰.
+
+
+Solmun lapsisolmut voisivat olla j‰rjestetyss‰ taulukossa. T‰llˆin solmun haun voisi suorittaa bin‰‰rihaulla ajassa O(log n) nykyisen O(n) sijaan. T‰ss‰ ohjelmassa Solmun haun yl‰raja on O(29), jos pysytt‰‰n suomenkielisis‰ teksteiss‰. 
+
+\subsection*{L‰hteet}
+Trie: 
+http://www.cs.helsinki.fi/u/ejunttil/opetus/tiraharjoitus/trie.html
+
+Trien tulostus, Esa Junttila, 2005: 
+http://www.cs.helsinki.fi/u/ejunttil/opetus/tiraharjoitus/treeprint.txt
+
+Trie: 
+http://en.wikipedia.org/wiki/Trie
+
+Tioterakenteet, Patrik Floreen, 2012: 
+http://www.cs.helsinki.fi/u/floreen/tira2012/tira.pdf
+
+
+
+\end{document}

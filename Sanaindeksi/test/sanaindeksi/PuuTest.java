@@ -58,7 +58,7 @@ public class PuuTest {
     @Test
     public void lisaaEtsi(){
         Puu p = new Puu();
-        String[] sanat = {"vapaus", "sana", "sulo", "itseironinen", "keksitty"};
+        String[] sanat = {"vapaus", "sana", "sulo", "itseironinen", "äiti", "keksitty"};
         for(int i = 0; i<sanat.length; i++){
             p.lisays(sanat[i]);
         }

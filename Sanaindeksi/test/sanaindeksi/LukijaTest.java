@@ -202,8 +202,36 @@ public class LukijaTest {
         koivu.etsi("of the of hone");
         loppu = System.nanoTime();
         System.out.println("etsi sanat of the hone puusta  (899 riviä) ajassa: " +(loppu-alku)+ "* 10^-6 ms");
+               
+    }
+    
+    @Test
+    public void vertaaLukuAikaaEmilyIso(){
+        System.out.println();
+        Lukija lukija = new Lukija(koivu);
+        long alku = System.currentTimeMillis();
+        lukija.lisaaTiedosto(new File("testi6.txt"));
+        long loppu = System.currentTimeMillis();  
+        System.out.println("Tiedoston lukemiseen, 542 riviä, meni "+ (loppu-alku)+ "ms");
+    }
+    
+    @Test
+    public void vertaaHakuAikaaEmilyIso(){
         
+        long alku = System.nanoTime();
+        koivu.etsi("count");
+        long loppu = System.nanoTime();
+        System.out.println("etsi sanan count puusta ajassa: " +(loppu-alku)+ "*10^-6 ms");
         
+        alku = System.nanoTime();
+        koivu.etsi("onomatopoeettinenalkoholiliikelaulutanssikoreografia");
+        loppu = System.nanoTime();
+        System.out.println("etsi sanan onomatopoeettinenalkoholiliikelaulutanssikoreografia puusta  (1197 riviä) ajassa: " +(loppu-alku)+ "*10^-6 ms");
+        
+        alku = System.nanoTime();
+        koivu.etsi("onomatopoeettinenalkoholiliikelaulutanssikoreografia count");
+        loppu = System.nanoTime();
+        System.out.println("etsi sanat count ja  onomatopoeettinenalkoholiliikelaulutanssikoreografia puusta  (1197 riviä) ajassa: " +(loppu-alku)+ "*10^-6 ms");
     }
   
 }

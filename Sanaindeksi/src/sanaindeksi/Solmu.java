@@ -24,10 +24,6 @@ public class Solmu {
      */     
     private static int tiedlkm;
      
-    
-    public static void setTiedLkm(int uusiLuku){
-        tiedlkm=uusiLuku;
-    }
   
     public Solmu(char merkki){
         if(tiedlkm < 0)
@@ -54,6 +50,13 @@ public class Solmu {
      */
     public char getMerkki(){
         return this.merkki;
+    }
+    /**
+     * Asettaa tekstitiedostojen lukumäärän, joka määrää rivitiedot-taulukon koon.
+     * @param uusiLuku 
+     */
+    public static void setTiedLkm(int uusiLuku){
+        tiedlkm=uusiLuku;
     }
     
     /**
